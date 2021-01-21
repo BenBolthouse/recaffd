@@ -4,7 +4,11 @@
   "description": "Another Express API project",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test"
+    "sequelize": "sequelize",
+    "sequelize-cli": "sequelize-cli",
+    "start": "per-env",
+    "start:development": "nodemon -r dotenv/config ./bin/www",
+    "start:production": "node ./bin/www"
   },
   "author": "Ben Bolthouse",
   "license": "ISC",
