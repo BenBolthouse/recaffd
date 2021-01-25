@@ -21,13 +21,25 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING,
         validate: {
+          notNull: {
+            args: true,
+            msg: 'Title is required.',
+          },
           len: {
             args: [5, 100],
-            msg: 'Title must be between 5 and 100 characters in length',
+            msg: 'Title must be between 5 and 100 characters in length.',
           },
         },
       },
-      body: DataTypes.STRING,
+      body: {
+        type: DataTypes.TEXT,
+        validate: {
+          len: {
+            args: [1, 1000],
+            msg: 'Title must be less than 1000 characters in length.',
+          },
+        },
+      },
     },
     {}
   );

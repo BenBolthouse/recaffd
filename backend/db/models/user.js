@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       username: {
         type: DataTypes.STRING,
-        unique: true,
         validate: {
           is: {
             args: /^([a-zA-Z0-9])*$/,
@@ -59,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = function (models) {
-    User.hasMany(models.Business, { foreignKey: 'ownerUserId', as: 'businesses' });
+    User.hasMany(models.Business, { foreignKey: 'userId', as: 'businesses' });
     User.hasMany(models.Review, { foreignKey: 'userId', as: 'reviews' });
     User.hasMany(models.Collection, { foreignKey: 'userId', as: 'collections' });
     User.belongsToMany(models.Role, {

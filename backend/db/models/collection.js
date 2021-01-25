@@ -28,6 +28,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'collectionId',
       as: 'products',
     });
+    Collection.belongsToMany(models.Business, {
+      through: 'business_collections',
+      otherKey: 'productId',
+      foreignKey: 'businessId',
+      as: 'businesses',
+    });
   };
   return NamedCollection;
 };

@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Business = sequelize.define(
     'Business',
     {
-      ownerUserId: DataTypes.UUID,
-      categoryId: DataTypes.STRING,
+      userId: DataTypes.INTEGER,
+      categoryName: DataTypes.STRING,
       latitude: DataTypes.NUMBER,
       longitude: DataTypes.NUMBER,
       name: {
@@ -20,7 +20,15 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      description: DataTypes.STRING,
+      description: {
+        type: DataTypes.STRING,
+        validate: {
+          len: {
+            args: [1, 1000],
+            msg: 'Name must be between 1 and 1000 characters in length.',
+          },
+        },
+      },
       address: DataTypes.STRING,
       city: DataTypes.STRING,
       state: {
@@ -49,8 +57,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Business.associate = function (models) {
-    Business.belongsTo(models.User, { foreignKey: 'ownerUserId', as: 'user' });
-    Business.hasOne(models.BusinessCategory, { foreignKey: 'categoryId', as: 'category' });
+    Business.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+    Business.hasOne(models.BusinessCategory, { foreignKey: 'name', as: 'category' });
     Business.belongsToMany(models.Review, {
       through: 'business_reviews',
       otherKey: 'reviewId',

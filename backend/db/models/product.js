@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         validate: {
           len: {
             args: [1, 200],

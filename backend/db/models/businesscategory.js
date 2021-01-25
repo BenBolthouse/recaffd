@@ -4,12 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     'BusinessCategory',
     {
       name: DataTypes.STRING,
-      description: DataTypes.STRING,
     },
     {}
   );
   BusinessType.associate = function (models) {
-    // associations can be defined here
+    BusinessType.hasMany(models.Business, { foreignKey: 'categoryName', as: 'businesses' });
   };
   return BusinessType;
 };

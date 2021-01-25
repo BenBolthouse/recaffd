@@ -16,8 +16,7 @@ module.exports = {
           type: Sequelize.INTEGER,
         },
         rating: {
-          allowNull: true,
-          defaultValue: null,
+          allowNull: false,
           type: Sequelize.INTEGER,
         },
         title: {
@@ -31,10 +30,12 @@ module.exports = {
         },
         createdAt: {
           allowNull: false,
+          defaultValue: Sequelize.fn('now'),
           type: Sequelize.DATE,
         },
         updatedAt: {
           allowNull: false,
+          defaultValue: Sequelize.fn('now'),
           type: Sequelize.DATE,
         },
       })

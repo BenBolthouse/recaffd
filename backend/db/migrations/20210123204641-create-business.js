@@ -9,24 +9,25 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      ownerUserId: {
+      userId: {
         allowNull: false,
         onDelete: 'CASCADE',
         references: { model: 'users', key: 'id' },
         type: Sequelize.INTEGER,
       },
-      categoryId: {
+      categoryName: {
         allowNull: false,
+        defaultValue: 'No Category',
         onDelete: 'CASCADE',
         references: { model: 'business_categories', key: 'id' },
         type: Sequelize.INTEGER,
       },
       latitude: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.FLOAT,
       },
       longitude: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.FLOAT,
       },
       name: {
@@ -35,27 +36,28 @@ module.exports = {
       },
       description: {
         allowNull: false,
+        defaultValue: 'No description provided',
         type: Sequelize.TEXT,
       },
       address: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(255),
       },
       city: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50),
       },
       state: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(2),
       },
       zip: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(5),
       },
       establishedAt: {
         allowNull: false,
-        defaultValue: Sequelize.literal('NOW()'),
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE,
       },
       closedAt: {

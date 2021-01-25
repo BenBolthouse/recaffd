@@ -13,6 +13,10 @@ module.exports = {
           allowNull: false,
           type: Sequelize.STRING(20),
         },
+        description: {
+          allowNull: false,
+          type: Sequelize.STRING(255),
+        },
       })
       .then(() => {
         return queryInterface.createTable('user_roles', {
