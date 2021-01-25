@@ -105,3 +105,8 @@ dist
 
 # Project assets on my computer
 __local__
+
+# VS Code launch config and workspace config files
+.vscode
+*.code-workspace
+
