@@ -1,17 +1,13 @@
 {
-  "name": "aggregate-dilemma",
-  "version": "1.0.0",
-  "description": "Another Express API project",
-  "main": "index.js",
+  "name": "recaffd-backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "bin/www",
   "scripts": {
-    "sequelize": "sequelize",
-    "sequelize-cli": "sequelize-cli",
-    "start": "per-env",
-    "start:development": "nodemon -r dotenv/config ./bin/www",
     "start:production": "node ./bin/www"
   },
   "author": "Ben Bolthouse",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
