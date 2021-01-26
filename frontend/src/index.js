@@ -7,7 +7,7 @@ import { restoreCSRF, fetch } from './store/csrf';
 
 import './styles/index.css'
 
-import App from './components/App';
+import App from './App';
 
 import configureStore from './store';
 
