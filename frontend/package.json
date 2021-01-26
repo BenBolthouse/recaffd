@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src"
   },
   "eslintConfig": {
     "extends": [
@@ -41,7 +42,9 @@
     ]
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "generate-react-cli": "^5.2.3",
+    "redux-logger": "^3.0.6",
+    "sass": "^1.32.5"
   },
   "proxy": "http://localhost:5000"
 }
