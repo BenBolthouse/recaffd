@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'business_reviews',
+      'BusinessReviews',
       [
         { businessId: 34, reviewId: 1 },
         { businessId: 18, reviewId: 2 },
@@ -996,6 +996,6 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('business_reviews', null, {});
+    return queryInterface.bulkDelete('BusinessReviews', null, {});
   },
 };

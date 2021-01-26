@@ -9,10 +9,10 @@ module.exports = {
       Example:
       */
     return queryInterface.bulkInsert(
-      'businesses',
+      'Businesses',
       [
         {
-          ownerUserId: 1,
+          userId: 1,
           name: 'Abandoned Apple',
           description:
             'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
@@ -21,7 +21,7 @@ module.exports = {
           address: '1133 Grayhawk Road',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.36,
           ratingCeiling: 4.5,
@@ -30,7 +30,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 1,
+          userId: 1,
           name: 'Painful Profit',
           description:
             'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
@@ -39,7 +39,7 @@ module.exports = {
           address: '151 Sloan Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.84,
           ratingCeiling: 4.0,
@@ -48,7 +48,7 @@ module.exports = {
           closedAt: '9/4/17 12:00 AM',
         },
         {
-          ownerUserId: 1,
+          userId: 1,
           name: 'Salmon Ski',
           description:
             'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.',
@@ -57,7 +57,7 @@ module.exports = {
           address: '53632 Maywood Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.56,
           ratingCeiling: 3.0,
@@ -66,7 +66,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 1,
+          userId: 1,
           name: 'Cubic Mask',
           description:
             'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
@@ -75,7 +75,7 @@ module.exports = {
           address: '6 Miller Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.12,
           ratingCeiling: 4.5,
@@ -84,7 +84,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 2,
+          userId: 2,
           name: 'Clocks Camera',
           description:
             'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
@@ -93,7 +93,7 @@ module.exports = {
           address: '0 Chinook Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.1,
           ratingCeiling: 1.5,
@@ -102,7 +102,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 2,
+          userId: 2,
           name: 'Thread Trucks',
           description:
             'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.',
@@ -111,7 +111,7 @@ module.exports = {
           address: '81 Thackeray Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.08,
           ratingCeiling: 4.5,
@@ -120,7 +120,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 3,
+          userId: 3,
           name: 'Toothbrush Furniture',
           description:
             'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.',
@@ -129,7 +129,7 @@ module.exports = {
           address: '216 Milwaukee Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.15,
           ratingCeiling: 3.5,
@@ -138,7 +138,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 4,
+          userId: 4,
           name: 'Pilot Pump',
           description:
             'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
@@ -147,7 +147,7 @@ module.exports = {
           address: '0182 Lakeland Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 1.55,
           ratingCeiling: 2.0,
@@ -156,7 +156,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 4,
+          userId: 4,
           name: 'Plume Gossip',
           description:
             'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.',
@@ -165,7 +165,7 @@ module.exports = {
           address: '72 Ronald Regan Circle',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.37,
           ratingCeiling: 3.5,
@@ -174,7 +174,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 4,
+          userId: 4,
           name: 'Fancy Fairies',
           description:
             'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.',
@@ -183,7 +183,7 @@ module.exports = {
           address: '898 Clyde Gallagher Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.2,
           ratingCeiling: 3.5,
@@ -192,7 +192,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 5,
+          userId: 5,
           name: 'Volleyball Turn',
           description:
             'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.',
@@ -201,7 +201,7 @@ module.exports = {
           address: '34 Swallow Parkway',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 4.2,
           ratingCeiling: 4.5,
@@ -210,7 +210,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 5,
+          userId: 5,
           name: 'Scent Size',
           description:
             'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.',
@@ -219,7 +219,7 @@ module.exports = {
           address: '48 Mcbride Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.05,
           ratingCeiling: 2.5,
@@ -228,7 +228,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 5,
+          userId: 5,
           name: 'Contract Cats',
           description:
             'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
@@ -237,7 +237,7 @@ module.exports = {
           address: '570 Armistice Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.46,
           ratingCeiling: 2.5,
@@ -246,7 +246,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 6,
+          userId: 6,
           name: 'Paint Peace',
           description:
             'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.',
@@ -255,7 +255,7 @@ module.exports = {
           address: '3 Jenifer Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 0.0,
           ratingCeiling: 0.0,
@@ -264,7 +264,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 6,
+          userId: 6,
           name: 'Spade Shirt',
           description:
             'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
@@ -273,7 +273,7 @@ module.exports = {
           address: '40 8th Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.77,
           ratingCeiling: 5.0,
@@ -282,7 +282,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 6,
+          userId: 6,
           name: 'Substance Furniture',
           description:
             'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.',
@@ -291,7 +291,7 @@ module.exports = {
           address: '64156 Russell Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 0.0,
           ratingCeiling: 0.0,
@@ -300,7 +300,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 6,
+          userId: 6,
           name: 'Photo Guitar',
           description:
             'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.',
@@ -309,7 +309,7 @@ module.exports = {
           address: '80 Crescent Oaks Road',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.94,
           ratingCeiling: 3.0,
@@ -318,7 +318,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Polygon Pardon',
           description:
             'Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.',
@@ -327,7 +327,7 @@ module.exports = {
           address: '00675 Park Meadow Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.77,
           ratingCeiling: 4.0,
@@ -336,7 +336,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Efficacious Mind',
           description:
             'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.',
@@ -345,7 +345,7 @@ module.exports = {
           address: '1 Village Green Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.77,
           ratingCeiling: 5.0,
@@ -354,7 +354,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Squeamish Crime',
           description:
             'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.',
@@ -363,7 +363,7 @@ module.exports = {
           address: '27 Sachtjen Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.5,
           ratingCeiling: 3.5,
@@ -372,7 +372,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Pigs Part',
           description:
             'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
@@ -381,7 +381,7 @@ module.exports = {
           address: '32 Burning Wood Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.06,
           ratingCeiling: 4.5,
@@ -390,7 +390,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Jam Smell',
           description:
             'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.',
@@ -399,7 +399,7 @@ module.exports = {
           address: '338 Manley Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.34,
           ratingCeiling: 3.5,
@@ -408,7 +408,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Agatha Ammonia',
           description:
             'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
@@ -417,7 +417,7 @@ module.exports = {
           address: '4 Walton Drive',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.3,
           ratingCeiling: 3.5,
@@ -426,7 +426,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Rabbit View',
           description:
             'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
@@ -435,7 +435,7 @@ module.exports = {
           address: '403 Iowa Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.5,
           ratingCeiling: 4.5,
@@ -444,7 +444,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Stomach Hearing',
           description:
             'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.',
@@ -453,7 +453,7 @@ module.exports = {
           address: '5 Lakeland Court',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.5,
           ratingCeiling: 4.5,
@@ -462,7 +462,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Early Pies',
           description: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
           latitude: 33.7520071795576,
@@ -470,7 +470,7 @@ module.exports = {
           address: '72 Garrison Court',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.12,
           ratingCeiling: 4.5,
@@ -479,7 +479,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 7,
+          userId: 7,
           name: 'Atlas Audio',
           description:
             'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
@@ -488,7 +488,7 @@ module.exports = {
           address: '894 Warner Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 1.25,
           ratingCeiling: 1.5,
@@ -497,7 +497,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 8,
+          userId: 8,
           name: 'Publicize Payment',
           description:
             'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
@@ -506,7 +506,7 @@ module.exports = {
           address: '1349 Merchant Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.86,
           ratingCeiling: 3.0,
@@ -515,7 +515,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 8,
+          userId: 8,
           name: 'Friends Glue',
           description:
             'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.',
@@ -524,7 +524,7 @@ module.exports = {
           address: '2397 Portage Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.58,
           ratingCeiling: 4.0,
@@ -533,7 +533,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 8,
+          userId: 8,
           name: 'Believe Button',
           description:
             'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
@@ -542,7 +542,7 @@ module.exports = {
           address: '33261 Spenser Circle',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.4,
           ratingCeiling: 2.5,
@@ -551,7 +551,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 8,
+          userId: 8,
           name: 'Behavior Beam',
           description:
             'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
@@ -560,7 +560,7 @@ module.exports = {
           address: '8560 Lakewood Gardens Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.09,
           ratingCeiling: 1.5,
@@ -569,7 +569,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 8,
+          userId: 8,
           name: 'Interest Ink',
           description:
             'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.',
@@ -578,7 +578,7 @@ module.exports = {
           address: '94 Reindahl Court',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.58,
           ratingCeiling: 2.0,
@@ -587,7 +587,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 9,
+          userId: 9,
           name: 'Morning Meeting',
           description: 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.',
           latitude: 33.7460047391022,
@@ -595,7 +595,7 @@ module.exports = {
           address: '1170 Homewood Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.33,
           ratingCeiling: 4.5,
@@ -604,7 +604,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 9,
+          userId: 9,
           name: 'Shave Scent',
           description:
             'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
@@ -613,7 +613,7 @@ module.exports = {
           address: '3477 Northridge Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 1.57,
           ratingCeiling: 2.0,
@@ -622,7 +622,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 9,
+          userId: 9,
           name: 'Precise Ruby',
           description:
             'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
@@ -631,7 +631,7 @@ module.exports = {
           address: '368 Pawling Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.48,
           ratingCeiling: 3.5,
@@ -640,7 +640,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 9,
+          userId: 9,
           name: 'Malicious Weight',
           description:
             'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
@@ -649,7 +649,7 @@ module.exports = {
           address: '419 Stoughton Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.45,
           ratingCeiling: 4.5,
@@ -658,7 +658,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 9,
+          userId: 9,
           name: 'Steady Ghost',
           description:
             'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.',
@@ -667,7 +667,7 @@ module.exports = {
           address: '5281 Nancy Center',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.48,
           ratingCeiling: 4.5,
@@ -676,7 +676,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 10,
+          userId: 10,
           name: 'Ski Sea',
           description:
             'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.',
@@ -685,7 +685,7 @@ module.exports = {
           address: '03941 Carberry Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.83,
           ratingCeiling: 2.0,
@@ -694,7 +694,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 10,
+          userId: 10,
           name: 'Wandering Curtain',
           description:
             'Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.',
@@ -703,7 +703,7 @@ module.exports = {
           address: '09063 Forest Dale Parkway',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.47,
           ratingCeiling: 3.5,
@@ -712,7 +712,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 10,
+          userId: 10,
           name: 'Oranges Order',
           description:
             'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.',
@@ -721,7 +721,7 @@ module.exports = {
           address: '6 Waubesa Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.05,
           ratingCeiling: 2.5,
@@ -730,7 +730,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 11,
+          userId: 11,
           name: 'Enchanted Goldfish',
           description:
             'Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.',
@@ -739,7 +739,7 @@ module.exports = {
           address: '3787 Golf Course Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.47,
           ratingCeiling: 3.5,
@@ -748,7 +748,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 11,
+          userId: 11,
           name: 'Part Person',
           description:
             'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
@@ -757,7 +757,7 @@ module.exports = {
           address: '87497 Evergreen Place',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.17,
           ratingCeiling: 2.5,
@@ -766,7 +766,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 11,
+          userId: 11,
           name: 'Shear Shoes',
           description:
             'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
@@ -775,7 +775,7 @@ module.exports = {
           address: '94 Kinsman Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 1.58,
           ratingCeiling: 2.0,
@@ -784,7 +784,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 11,
+          userId: 11,
           name: 'Hen Paint',
           description:
             'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.',
@@ -793,7 +793,7 @@ module.exports = {
           address: '94 Nevada Parkway',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 3.38,
           ratingCeiling: 3.5,
@@ -802,7 +802,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Safe Trade',
           description:
             'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
@@ -811,7 +811,7 @@ module.exports = {
           address: '13 Waubesa Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.62,
           ratingCeiling: 4.0,
@@ -820,7 +820,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Creature Cushion',
           description:
             'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.',
@@ -829,7 +829,7 @@ module.exports = {
           address: '14 Meadow Valley Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.56,
           ratingCeiling: 2.0,
@@ -838,7 +838,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Smooth Board',
           description:
             'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
@@ -847,7 +847,7 @@ module.exports = {
           address: '16 Dayton Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.72,
           ratingCeiling: 4.0,
@@ -856,7 +856,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Pencil Podium',
           description:
             'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.',
@@ -865,7 +865,7 @@ module.exports = {
           address: '6927 Schmedeman Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 0.0,
           ratingCeiling: 0.0,
@@ -874,7 +874,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Resonant Cup',
           description:
             'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
@@ -883,7 +883,7 @@ module.exports = {
           address: '7 Spenser Place',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.36,
           ratingCeiling: 4.5,
@@ -892,7 +892,7 @@ module.exports = {
           closedAt: '4/6/09 12:00 AM',
         },
         {
-          ownerUserId: 12,
+          userId: 12,
           name: 'Trick Robot',
           description:
             'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
@@ -901,7 +901,7 @@ module.exports = {
           address: '8 Troy Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.37,
           ratingCeiling: 4.5,
@@ -910,7 +910,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 13,
+          userId: 13,
           name: 'Cotton Sabine',
           description:
             'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.',
@@ -919,7 +919,7 @@ module.exports = {
           address: '41468 Mifflin Drive',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.97,
           ratingCeiling: 3.0,
@@ -928,7 +928,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'Agatha Almond',
           description:
             'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.',
@@ -937,7 +937,7 @@ module.exports = {
           address: '0 Scott Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.52,
           ratingCeiling: 4.0,
@@ -946,7 +946,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'October Robert',
           description:
             'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.',
@@ -955,7 +955,7 @@ module.exports = {
           address: '27 Washington Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.19,
           ratingCeiling: 3.5,
@@ -964,7 +964,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'Money Metal',
           description:
             'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.',
@@ -973,7 +973,7 @@ module.exports = {
           address: '4 Myrtle Parkway',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.61,
           ratingCeiling: 5.0,
@@ -982,7 +982,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'Ice Bubble',
           description:
             'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.',
@@ -991,7 +991,7 @@ module.exports = {
           address: '41 Comanche Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.72,
           ratingCeiling: 4.0,
@@ -1000,7 +1000,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'Bear Bike',
           description:
             'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
@@ -1009,7 +1009,7 @@ module.exports = {
           address: '9 Veith Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.04,
           ratingCeiling: 2.5,
@@ -1018,7 +1018,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 14,
+          userId: 14,
           name: 'Start Yarn',
           description:
             'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
@@ -1027,7 +1027,7 @@ module.exports = {
           address: '9361 Forest Run Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.35,
           ratingCeiling: 4.5,
@@ -1036,7 +1036,7 @@ module.exports = {
           closedAt: '8/17/18 12:00 AM',
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Cast Cord',
           description:
             'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
@@ -1045,7 +1045,7 @@ module.exports = {
           address: '2364 Transport Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 1.23,
           ratingCeiling: 1.5,
@@ -1054,7 +1054,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Laptop Chicago',
           description:
             'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.',
@@ -1063,7 +1063,7 @@ module.exports = {
           address: '267 Continental Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 1.12,
           ratingCeiling: 1.5,
@@ -1072,7 +1072,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Sting Sheet',
           description:
             'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.',
@@ -1081,7 +1081,7 @@ module.exports = {
           address: '3 Dunning Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 1.82,
           ratingCeiling: 2.0,
@@ -1090,7 +1090,7 @@ module.exports = {
           closedAt: '4/22/18 12:00 AM',
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Chariot Cola',
           description:
             'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
@@ -1099,7 +1099,7 @@ module.exports = {
           address: '4536 Dakota Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 1.27,
           ratingCeiling: 1.5,
@@ -1108,7 +1108,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Include Icicle',
           description:
             'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
@@ -1117,7 +1117,7 @@ module.exports = {
           address: '699 Laurel Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 1.57,
           ratingCeiling: 2.0,
@@ -1126,7 +1126,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 15,
+          userId: 15,
           name: 'Maddening Crib',
           description:
             'Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.',
@@ -1135,7 +1135,7 @@ module.exports = {
           address: '70 Doe Crossing Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.3,
           ratingCeiling: 3.5,
@@ -1144,7 +1144,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 16,
+          userId: 16,
           name: 'Glue Gun',
           description:
             'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.',
@@ -1153,7 +1153,7 @@ module.exports = {
           address: '231 Summer Ridge Place',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 2.63,
           ratingCeiling: 3.0,
@@ -1162,7 +1162,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 16,
+          userId: 16,
           name: 'Helpful Walk',
           description:
             'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
@@ -1171,7 +1171,7 @@ module.exports = {
           address: '281 Grasskamp Place',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.02,
           ratingCeiling: 4.5,
@@ -1180,7 +1180,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 16,
+          userId: 16,
           name: 'Toe Lead',
           description:
             'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
@@ -1189,7 +1189,7 @@ module.exports = {
           address: '53288 Green Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.53,
           ratingCeiling: 4.0,
@@ -1198,7 +1198,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 16,
+          userId: 16,
           name: 'Earthy Eyes',
           description:
             'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.',
@@ -1207,7 +1207,7 @@ module.exports = {
           address: '748 Memorial Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.42,
           ratingCeiling: 4.5,
@@ -1216,7 +1216,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 17,
+          userId: 17,
           name: 'Carpenter Church',
           description:
             'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
@@ -1225,7 +1225,7 @@ module.exports = {
           address: '077 Westerfield Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.1,
           ratingCeiling: 4.5,
@@ -1234,7 +1234,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 17,
+          userId: 17,
           name: 'Picture Profit',
           description: 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
           latitude: 33.7432025102565,
@@ -1242,7 +1242,7 @@ module.exports = {
           address: '583 Southridge Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 2.86,
           ratingCeiling: 3.0,
@@ -1251,7 +1251,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 17,
+          userId: 17,
           name: 'Igor Sabine',
           description:
             'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.',
@@ -1260,7 +1260,7 @@ module.exports = {
           address: '903 Fairview Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.1,
           ratingCeiling: 3.5,
@@ -1269,7 +1269,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 18,
+          userId: 18,
           name: 'Shave Patrol',
           description:
             'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.',
@@ -1278,7 +1278,7 @@ module.exports = {
           address: '2 Vidon Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.47,
           ratingCeiling: 4.5,
@@ -1287,7 +1287,7 @@ module.exports = {
           closedAt: '2/18/18 12:00 AM',
         },
         {
-          ownerUserId: 18,
+          userId: 18,
           name: 'Even Earthquake',
           description:
             'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.',
@@ -1296,7 +1296,7 @@ module.exports = {
           address: '5317 Buhler Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.97,
           ratingCeiling: 5.0,
@@ -1305,7 +1305,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 18,
+          userId: 18,
           name: 'Fiesta Armor',
           description:
             'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
@@ -1314,7 +1314,7 @@ module.exports = {
           address: '65175 Clove Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 0.0,
           ratingCeiling: 0.0,
@@ -1323,7 +1323,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 19,
+          userId: 19,
           name: 'Cemetery Cracker',
           description:
             'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.',
@@ -1332,7 +1332,7 @@ module.exports = {
           address: '2 Crowley Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.53,
           ratingCeiling: 3.0,
@@ -1341,7 +1341,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 19,
+          userId: 19,
           name: 'Mask Olga',
           description:
             'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.',
@@ -1350,7 +1350,7 @@ module.exports = {
           address: '6 Norway Maple Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.01,
           ratingCeiling: 3.5,
@@ -1359,7 +1359,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 19,
+          userId: 19,
           name: 'Parent Madonna',
           description:
             'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.',
@@ -1368,7 +1368,7 @@ module.exports = {
           address: '88045 Haas Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.22,
           ratingCeiling: 3.5,
@@ -1377,7 +1377,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Adjoining Bread',
           description:
             'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.',
@@ -1386,7 +1386,7 @@ module.exports = {
           address: '12 Corry Pass',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.59,
           ratingCeiling: 4.0,
@@ -1395,7 +1395,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Salon Swing',
           description:
             'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
@@ -1404,7 +1404,7 @@ module.exports = {
           address: '1244 Morningstar Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.87,
           ratingCeiling: 4.0,
@@ -1413,7 +1413,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Picayune Powder',
           description:
             'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
@@ -1422,7 +1422,7 @@ module.exports = {
           address: '21959 Sloan Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.77,
           ratingCeiling: 4.0,
@@ -1431,7 +1431,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Comfort Children',
           description:
             'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
@@ -1440,7 +1440,7 @@ module.exports = {
           address: '3112 Dahle Parkway',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 1.5,
           ratingCeiling: 1.5,
@@ -1449,7 +1449,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Testy Cook',
           description:
             'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.',
@@ -1458,7 +1458,7 @@ module.exports = {
           address: '432 Annamark Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.79,
           ratingCeiling: 4.0,
@@ -1467,7 +1467,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Air Authority',
           description:
             'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.',
@@ -1476,7 +1476,7 @@ module.exports = {
           address: '453 Banding Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.09,
           ratingCeiling: 4.5,
@@ -1485,7 +1485,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Puma Peace',
           description:
             'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
@@ -1494,7 +1494,7 @@ module.exports = {
           address: '6 Lillian Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.82,
           ratingCeiling: 5.0,
@@ -1503,7 +1503,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Alibi Alpine',
           description:
             'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
@@ -1512,7 +1512,7 @@ module.exports = {
           address: '75 Brickson Park Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.92,
           ratingCeiling: 5.0,
@@ -1521,7 +1521,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 21,
+          userId: 21,
           name: 'Absurd Pin',
           description:
             'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
@@ -1530,7 +1530,7 @@ module.exports = {
           address: '8797 Eastwood Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.78,
           ratingCeiling: 5.0,
@@ -1539,7 +1539,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 22,
+          userId: 22,
           name: 'Snake Truck',
           description: 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
           latitude: 33.7601202836089,
@@ -1547,7 +1547,7 @@ module.exports = {
           address: '01028 Riverside Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.29,
           ratingCeiling: 3.5,
@@ -1556,7 +1556,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 22,
+          userId: 22,
           name: 'Smell Team',
           description:
             'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
@@ -1565,7 +1565,7 @@ module.exports = {
           address: '06945 Hazelcrest Street',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 3.6,
           ratingCeiling: 4.0,
@@ -1574,7 +1574,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 22,
+          userId: 22,
           name: 'Base Beds',
           description:
             'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
@@ -1583,7 +1583,7 @@ module.exports = {
           address: '35 Grayhawk Drive',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.39,
           ratingCeiling: 3.5,
@@ -1592,7 +1592,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 22,
+          userId: 22,
           name: 'Club Cat',
           description:
             'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.',
@@ -1601,7 +1601,7 @@ module.exports = {
           address: '5557 Derek Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 1.98,
           ratingCeiling: 2.0,
@@ -1610,7 +1610,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Piano Phantom',
           description:
             'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.',
@@ -1619,7 +1619,7 @@ module.exports = {
           address: '0 Knutson Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 1.1,
           ratingCeiling: 1.5,
@@ -1628,7 +1628,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Bone Insurance',
           description:
             'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.',
@@ -1637,7 +1637,7 @@ module.exports = {
           address: '17 Algoma Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 4.06,
           ratingCeiling: 4.5,
@@ -1646,7 +1646,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Medusa Minute',
           description:
             'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.',
@@ -1655,7 +1655,7 @@ module.exports = {
           address: '41 Knutson Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 1.68,
           ratingCeiling: 2.0,
@@ -1664,7 +1664,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Crowd Wash',
           description:
             'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
@@ -1673,7 +1673,7 @@ module.exports = {
           address: '7 Lukken Street',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.92,
           ratingCeiling: 4.0,
@@ -1682,7 +1682,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Smash Suit',
           description:
             'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.',
@@ -1691,7 +1691,7 @@ module.exports = {
           address: '795 Caliangt Lane',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 1.64,
           ratingCeiling: 2.0,
@@ -1700,7 +1700,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 23,
+          userId: 23,
           name: 'Burger Bronze',
           description:
             'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.',
@@ -1709,7 +1709,7 @@ module.exports = {
           address: '992 Myrtle Circle',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 2.95,
           ratingCeiling: 3.0,
@@ -1718,7 +1718,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Jumpy Tail',
           description:
             'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
@@ -1727,7 +1727,7 @@ module.exports = {
           address: '3264 Corry Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.48,
           ratingCeiling: 3.5,
@@ -1736,7 +1736,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Lopsided Letters',
           description:
             'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.',
@@ -1745,7 +1745,7 @@ module.exports = {
           address: '644 Pennsylvania Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.99,
           ratingCeiling: 5.0,
@@ -1754,7 +1754,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Suggestion Squirrel',
           description:
             'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.',
@@ -1763,7 +1763,7 @@ module.exports = {
           address: '65783 Portage Street',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.87,
           ratingCeiling: 5.0,
@@ -1772,7 +1772,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Cloud Fold',
           description:
             'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.',
@@ -1781,7 +1781,7 @@ module.exports = {
           address: '7 Summit Place',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.92,
           ratingCeiling: 5.0,
@@ -1790,7 +1790,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Waiter Neptune',
           description:
             'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
@@ -1799,7 +1799,7 @@ module.exports = {
           address: '722 American Ash Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 3.84,
           ratingCeiling: 4.0,
@@ -1808,7 +1808,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Soup Quiet',
           description:
             'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.',
@@ -1817,7 +1817,7 @@ module.exports = {
           address: '78582 Monterey Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.32,
           ratingCeiling: 3.5,
@@ -1826,7 +1826,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 24,
+          userId: 24,
           name: 'Chickens Card',
           description:
             'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
@@ -1835,7 +1835,7 @@ module.exports = {
           address: '924 Heffernan Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.47,
           ratingCeiling: 2.5,
@@ -1844,7 +1844,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 25,
+          userId: 25,
           name: 'Short Shelf',
           description:
             'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.',
@@ -1853,7 +1853,7 @@ module.exports = {
           address: '2 Moose Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 2.7,
           ratingCeiling: 3.0,
@@ -1862,7 +1862,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 25,
+          userId: 25,
           name: 'Sparkling Science',
           description:
             'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.',
@@ -1871,7 +1871,7 @@ module.exports = {
           address: '5 Village Hill',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.37,
           ratingCeiling: 3.5,
@@ -1880,7 +1880,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 25,
+          userId: 25,
           name: 'Style Story',
           description:
             'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.',
@@ -1889,7 +1889,7 @@ module.exports = {
           address: '666 Veith Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.19,
           ratingCeiling: 3.5,
@@ -1898,7 +1898,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 25,
+          userId: 25,
           name: 'Fallacious Rate',
           description:
             'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
@@ -1907,7 +1907,7 @@ module.exports = {
           address: '94969 Blackbird Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 4.95,
           ratingCeiling: 5.0,
@@ -1916,7 +1916,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 26,
+          userId: 26,
           name: 'Humorous Crow',
           description:
             'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.',
@@ -1925,7 +1925,7 @@ module.exports = {
           address: '48028 Westerfield Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.32,
           ratingCeiling: 3.5,
@@ -1934,7 +1934,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 26,
+          userId: 26,
           name: 'Monkey North',
           description:
             'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
@@ -1943,7 +1943,7 @@ module.exports = {
           address: '68 Butterfield Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.86,
           ratingCeiling: 5.0,
@@ -1952,7 +1952,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 26,
+          userId: 26,
           name: 'Structure Silk',
           description:
             'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
@@ -1961,7 +1961,7 @@ module.exports = {
           address: '687 Golf Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.17,
           ratingCeiling: 4.5,
@@ -1970,7 +1970,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 27,
+          userId: 27,
           name: 'Shock Sensor',
           description:
             'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
@@ -1979,7 +1979,7 @@ module.exports = {
           address: '02 Golf Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 2.11,
           ratingCeiling: 2.5,
@@ -1988,7 +1988,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 27,
+          userId: 27,
           name: 'Emerald Delta',
           description:
             'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.',
@@ -1997,7 +1997,7 @@ module.exports = {
           address: '8 Petterle Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 4.81,
           ratingCeiling: 5.0,
@@ -2006,7 +2006,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 27,
+          userId: 27,
           name: 'Maestro Control',
           description:
             'Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.',
@@ -2015,7 +2015,7 @@ module.exports = {
           address: '823 Milwaukee Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 3.18,
           ratingCeiling: 3.5,
@@ -2024,7 +2024,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 28,
+          userId: 28,
           name: 'Maestro Moses',
           description:
             'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
@@ -2033,7 +2033,7 @@ module.exports = {
           address: '03 Shoshone Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 2.45,
           ratingCeiling: 2.5,
@@ -2042,7 +2042,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 28,
+          userId: 28,
           name: 'Gruesome Planes',
           description:
             'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
@@ -2051,7 +2051,7 @@ module.exports = {
           address: '1070 Crowley Junction',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.51,
           ratingCeiling: 5.0,
@@ -2060,7 +2060,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 28,
+          userId: 28,
           name: 'Dynamic Deer',
           description:
             'Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.',
@@ -2069,7 +2069,7 @@ module.exports = {
           address: '23016 Laurel Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.42,
           ratingCeiling: 4.5,
@@ -2078,7 +2078,7 @@ module.exports = {
           closedAt: '9/13/17 12:00 AM',
         },
         {
-          ownerUserId: 28,
+          userId: 28,
           name: 'Bermuda Slalom',
           description:
             'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
@@ -2087,7 +2087,7 @@ module.exports = {
           address: '593 Hermina Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 1.47,
           ratingCeiling: 1.5,
@@ -2096,7 +2096,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 28,
+          userId: 28,
           name: 'Signal Spider',
           description:
             'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.',
@@ -2105,7 +2105,7 @@ module.exports = {
           address: '8 Monica Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 3.79,
           ratingCeiling: 4.0,
@@ -2114,7 +2114,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 29,
+          userId: 29,
           name: 'Opinion Blast',
           description:
             'Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.',
@@ -2123,7 +2123,7 @@ module.exports = {
           address: '40 Thompson Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 2.51,
           ratingCeiling: 3.0,
@@ -2132,7 +2132,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 29,
+          userId: 29,
           name: 'Makeshift Marble',
           description:
             'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.',
@@ -2141,7 +2141,7 @@ module.exports = {
           address: '6 Grasskamp Trail',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.34,
           ratingCeiling: 4.5,
@@ -2150,7 +2150,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 30,
+          userId: 30,
           name: 'Scrawny Sheet',
           description:
             'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.',
@@ -2159,7 +2159,7 @@ module.exports = {
           address: '29 Clyde Gallagher Way',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 3.44,
           ratingCeiling: 3.5,
@@ -2168,7 +2168,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 31,
+          userId: 31,
           name: 'Sheet Sky',
           description:
             'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
@@ -2177,7 +2177,7 @@ module.exports = {
           address: '0 Utah Plaza',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 1.8,
           ratingCeiling: 2.0,
@@ -2186,7 +2186,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 31,
+          userId: 31,
           name: 'Charter Private',
           description:
             'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.',
@@ -2195,7 +2195,7 @@ module.exports = {
           address: '39014 Grasskamp Park',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 2,
           rating: 2.63,
           ratingCeiling: 3.0,
@@ -2204,7 +2204,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 31,
+          userId: 31,
           name: 'Stage Stop',
           description:
             'Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
@@ -2213,7 +2213,7 @@ module.exports = {
           address: '639 Valley Edge Terrace',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 1,
           rating: 4.71,
           ratingCeiling: 5.0,
@@ -2222,7 +2222,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 31,
+          userId: 31,
           name: 'Fight Nest',
           description:
             'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.',
@@ -2231,7 +2231,7 @@ module.exports = {
           address: '8 Redwing Alley',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 5,
           rating: 4.49,
           ratingCeiling: 4.5,
@@ -2240,7 +2240,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 31,
+          userId: 31,
           name: 'Solid Cycle',
           description:
             'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.',
@@ -2249,7 +2249,7 @@ module.exports = {
           address: '991 Clove Crossing',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 4.98,
           ratingCeiling: 5.0,
@@ -2258,7 +2258,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 32,
+          userId: 32,
           name: 'Babies Book',
           description:
             'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
@@ -2267,7 +2267,7 @@ module.exports = {
           address: '0 Scofield Point',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 3,
           rating: 1.34,
           ratingCeiling: 1.5,
@@ -2276,7 +2276,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 32,
+          userId: 32,
           name: 'Spiral Seminar',
           description:
             'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.',
@@ -2285,7 +2285,7 @@ module.exports = {
           address: '5862 Badeau Drive',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.0,
           ratingCeiling: 3.0,
@@ -2294,7 +2294,7 @@ module.exports = {
           closedAt: null,
         },
         {
-          ownerUserId: 32,
+          userId: 32,
           name: 'Wine Linen',
           description: 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.',
           latitude: 33.7579886642998,
@@ -2302,7 +2302,7 @@ module.exports = {
           address: '82 Johnson Avenue',
           city: 'Atlanta',
           state: 'GA',
-          zip: '30303',
+          zip: 30303,
           categoryId: 4,
           rating: 3.92,
           ratingCeiling: 4.0,
@@ -2315,7 +2315,7 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    queryInterface.sequelize.query('ALTER SEQUENCE businesses_id_seq RESTART WITH 1;');
-    return queryInterface.bulkDelete('businesses', null, {});
+    queryInterface.sequelize.query('ALTER SEQUENCE "Businesses_id_seq" RESTART WITH 1;');
+    return queryInterface.bulkDelete('Businesses', null, {});
   },
 };

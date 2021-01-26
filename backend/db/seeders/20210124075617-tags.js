@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'tags',
+      'Tags',
       [
         { name: 'Loud' },
         { name: 'Upbeat' },
@@ -39,7 +39,7 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    queryInterface.sequelize.query('ALTER SEQUENCE tags_id_seq RESTART WITH 1;');
-    return queryInterface.bulkDelete('tags', null, {});
+    queryInterface.sequelize.query('ALTER SEQUENCE "Tags_id_seq" RESTART WITH 1;');
+    return queryInterface.bulkDelete('Tags', null, {});
   },
 };

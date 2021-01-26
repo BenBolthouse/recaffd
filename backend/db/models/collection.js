@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Collection = sequelize.define(
     'Collection',
@@ -20,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  NamedCollection.associate = function (models) {
+  Collection.associate = function (models) {
     Collection.belongsTo(models.User, { foreignKey: 'userId' });
     Collection.belongsToMany(models.Product, {
       through: 'product_collections',
@@ -35,5 +36,5 @@ module.exports = (sequelize, DataTypes) => {
       as: 'businesses',
     });
   };
-  return NamedCollection;
+  return Collection;
 };

@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable('reviews', {
+      .createTable('Reviews', {
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
         userId: {
           allowNull: false,
           onDelete: 'CASCADE',
-          references: { model: 'users', key: 'id' },
+          references: { model: 'Users', key: 'id' },
           type: Sequelize.INTEGER,
         },
         rating: {
@@ -40,48 +40,66 @@ module.exports = {
         },
       })
       .then(() => {
-        return queryInterface.createTable('business_reviews', {
+        return queryInterface.createTable('BusinessReviews', {
           businessId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            primaryKey: true,
-            references: { model: 'businesses', key: 'id' },
+            references: { model: 'Businesses', key: 'id' },
             type: Sequelize.INTEGER,
           },
           reviewId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            primaryKey: true,
-            references: { model: 'reviews', key: 'id' },
+            references: { model: 'Reviews', key: 'id' },
             type: Sequelize.INTEGER,
+          },
+          createdAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
+          },
+          updatedAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
           },
         });
       })
       .then(() => {
-        return queryInterface.createTable('product_reviews', {
+        return queryInterface.createTable('ProductReviews', {
           productId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'products', key: 'id' },
+            references: { model: 'Products', key: 'id' },
             type: Sequelize.INTEGER,
           },
           reviewId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'reviews', key: 'id' },
+            references: { model: 'Reviews', key: 'id' },
             type: Sequelize.INTEGER,
+          },
+          createdAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
+          },
+          updatedAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
           },
         });
       });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface
-      .dropTable('business_reviews')
+      .dropTable('BusinessReviews')
       .then(() => {
-        return queryInterface.dropTable('product_reviews');
+        return queryInterface.dropTable('ProductReviews');
       })
       .then(() => {
-        return queryInterface.dropTable('reviews');
+        return queryInterface.dropTable('Reviews');
       });
   },
 };

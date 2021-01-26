@@ -3,8 +3,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'roles',
+      'Roles',
       [
+        { name: 'NONE' },
         { name: 'USER' },
         { name: 'BUSINESS_OWNER' },
         { name: 'ADMINISTRATOR' },
@@ -14,7 +15,7 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    queryInterface.sequelize.query('ALTER SEQUENCE roles_id_seq RESTART WITH 1;');
-    return queryInterface.bulkDelete('roles', null, {});
+    queryInterface.sequelize.query('ALTER SEQUENCE "Roles_id_seq" RESTART WITH 1;');
+    return queryInterface.bulkDelete('Roles', null, {});
   },
 };

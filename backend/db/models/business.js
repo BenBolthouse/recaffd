@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Business = sequelize.define(
     'Business',
@@ -41,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       zip: {
-        type: DataTypes.ZIP,
+        type: DataTypes.STRING,
         validate: {
           is: {
             args: /^([0-9]){5,}$/,
@@ -58,15 +59,15 @@ module.exports = (sequelize, DataTypes) => {
   );
   Business.associate = function (models) {
     Business.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-    Business.hasOne(models.BusinessCategory, { foreignKey: 'name', as: 'category' });
+    Business.hasOne(models.BusinessCategories, { foreignKey: 'name', as: 'category' });
     Business.belongsToMany(models.Review, {
-      through: 'business_reviews',
+      through: 'BusinessReviews',
       otherKey: 'reviewId',
       foreignKey: 'businessId',
       as: 'reviews',
     });
     Business.belongsToMany(models.Tag, {
-      through: 'business_tags',
+      through: 'BusinessTags',
       otherKey: 'tagId',
       foreignKey: 'businessId',
       as: 'tags',

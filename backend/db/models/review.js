@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Review = sequelize.define(
     'Review',
@@ -21,10 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING,
         validate: {
-          notNull: {
-            args: true,
-            msg: 'Title is required.',
-          },
           len: {
             args: [5, 100],
             msg: 'Title must be between 5 and 100 characters in length.',
@@ -46,13 +43,13 @@ module.exports = (sequelize, DataTypes) => {
   Review.associate = function (models) {
     Review.belongsTo(models.User, { foreignKey: 'userId' });
     Review.belongsToMany(models.Business, {
-      through: 'business_reviews',
+      through: 'BusinessReviews',
       otherKey: 'businessId',
       foreignKey: 'reviewId',
       as: 'businesses',
     });
     Review.belongsToMany(models.Product, {
-      through: 'product_reviews',
+      through: 'ProductReviews',
       otherKey: 'productId',
       foreignKey: 'reviewId',
       as: 'products',

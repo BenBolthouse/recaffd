@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable('tags', {
+      .createTable('Tags', {
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -16,46 +16,66 @@ module.exports = {
         },
       })
       .then(() => {
-        return queryInterface.createTable('business_tags', {
+        return queryInterface.createTable('BusinessTags', {
           businessId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'businesses', key: 'id' },
+            references: { model: 'Businesses', key: 'id' },
             type: Sequelize.INTEGER,
           },
           tagId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'tags', key: 'id' },
+            references: { model: 'Tags', key: 'id' },
             type: Sequelize.INTEGER,
+          },
+          createdAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
+          },
+          updatedAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
           },
         });
       })
       .then(() => {
-        return queryInterface.createTable('product_tags', {
+        return queryInterface.createTable('ProductTags', {
           productId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'products', key: 'id' },
+            references: { model: 'Products', key: 'id' },
             type: Sequelize.INTEGER,
           },
           tagId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            references: { model: 'tags', key: 'id' },
+            references: { model: 'Tags', key: 'id' },
             type: Sequelize.INTEGER,
+          },
+          createdAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
+          },
+          updatedAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
           },
         });
       });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface
-      .dropTable('business_tags')
+      .dropTable('BusinessTags')
       .then(() => {
-        return queryInterface.dropTable('product_tags');
+        return queryInterface.dropTable('ProductTags');
       })
       .then(() => {
-        return queryInterface.dropTable('tags');
+        return queryInterface.dropTable('Tags');
       });
   },
 };

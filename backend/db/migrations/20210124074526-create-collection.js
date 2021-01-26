@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable('collections', {
+      .createTable('Collections', {
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
         userId: {
           allowNull: false,
           onDelete: 'CASCADE',
-          references: { model: 'users', key: 'id' },
+          references: { model: 'Users', key: 'id' },
           type: Sequelize.INTEGER,
         },
         name: {
@@ -31,37 +31,37 @@ module.exports = {
         },
       })
       .then(() => {
-        return queryInterface.createTable('business_collections', {
+        return queryInterface.createTable('BusinessCollections', {
           businessId: {
             allowNull: false,
             primaryKey: true,
             onDelete: 'CASCADE',
-            references: { model: 'businesses', key: 'id' },
+            references: { model: 'Businesses', key: 'id' },
             type: Sequelize.INTEGER,
           },
           collectionId: {
             allowNull: false,
             primaryKey: true,
             onDelete: 'CASCADE',
-            references: { model: 'collections', key: 'id' },
+            references: { model: 'Collections', key: 'id' },
             type: Sequelize.INTEGER,
           },
         });
       })
       .then(() => {
-        return queryInterface.createTable('product_collections', {
+        return queryInterface.createTable('ProductCollections', {
           productId: {
             allowNull: false,
             primaryKey: true,
             onDelete: 'CASCADE',
-            references: { model: 'products', key: 'id' },
+            references: { model: 'Products', key: 'id' },
             type: Sequelize.INTEGER,
           },
           collectionId: {
             allowNull: false,
             primaryKey: true,
             onDelete: 'CASCADE',
-            references: { model: 'collections', key: 'id' },
+            references: { model: 'Collections', key: 'id' },
             type: Sequelize.INTEGER,
           },
         });
@@ -69,12 +69,12 @@ module.exports = {
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface
-      .dropTable('business_collections')
+      .dropTable('BusinessCollections')
       .then(() => {
-        return queryInterface.dropTable('product_collections');
+        return queryInterface.dropTable('ProductCollections');
       })
       .then(() => {
-        return queryInterface.dropTable('collections');
+        return queryInterface.dropTable('Collections');
       });
   },
 };

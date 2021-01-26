@@ -1,14 +1,12 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
-  const BusinessType = sequelize.define(
-    'BusinessCategory',
+  const BusinessCategories = sequelize.define(
+    'BusinessCategories',
     {
       name: DataTypes.STRING,
     },
     {}
   );
-  BusinessType.associate = function (models) {
-    BusinessType.hasMany(models.Business, { foreignKey: 'categoryName', as: 'businesses' });
-  };
-  return BusinessType;
+  return BusinessCategories;
 };

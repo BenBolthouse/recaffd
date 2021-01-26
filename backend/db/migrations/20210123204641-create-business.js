@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('businesses', {
+    return queryInterface.createTable('Businesses', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,14 +12,14 @@ module.exports = {
       userId: {
         allowNull: false,
         onDelete: 'CASCADE',
-        references: { model: 'users', key: 'id' },
+        references: { model: 'Users', key: 'id' },
         type: Sequelize.INTEGER,
       },
-      categoryName: {
+      categoryId: {
         allowNull: false,
-        defaultValue: 'No Category',
+        defaultValue: 1,
         onDelete: 'CASCADE',
-        references: { model: 'business_categories', key: 'id' },
+        references: { model: 'BusinessCategories', key: 'id' },
         type: Sequelize.INTEGER,
       },
       latitude: {
@@ -77,15 +77,17 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE,
       },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('businesses');
+    return queryInterface.dropTable('Businesses');
   },
 };

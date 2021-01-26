@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'products',
+      'Products',
       [
         {
           businessId: 27,
@@ -4060,7 +4060,7 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    queryInterface.sequelize.query('ALTER SEQUENCE products_id_seq RESTART WITH 1;');
-    return queryInterface.bulkDelete('products', null, {});
+    queryInterface.sequelize.query('ALTER SEQUENCE "Products_id_seq" RESTART WITH 1;');
+    return queryInterface.bulkDelete('Products', null, {});
   },
 };

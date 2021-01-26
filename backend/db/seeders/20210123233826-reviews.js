@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'reviews',
+      'Reviews',
       [
         {
           userId: 491,
@@ -17749,7 +17749,7 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    queryInterface.sequelize.query('ALTER SEQUENCE reviews_id_seq RESTART WITH 1;');
-    return queryInterface.bulkDelete('reviews', null, {});
+    queryInterface.sequelize.query('ALTER SEQUENCE "Reviews_id_seq" RESTART WITH 1;');
+    return queryInterface.bulkDelete('Reviews', null, {});
   },
 };

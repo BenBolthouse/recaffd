@@ -2,11 +2,11 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable('roles', {
+      .createTable('Roles', {
         id: {
-          allowNull: false,
           autoIncrement: true,
           primaryKey: true,
+          allowNull: false,
           type: Sequelize.INTEGER,
         },
         name: {
@@ -14,32 +14,51 @@ module.exports = {
           type: Sequelize.STRING(20),
         },
         description: {
-          allowNull: false,
+          allowNull: true,
+          defaultValue: null,
           type: Sequelize.STRING(255),
+        },
+        createdAt: {
+          allowNull: false,
+          defaultValue: Sequelize.fn('now'),
+          type: Sequelize.DATE,
+        },
+        updatedAt: {
+          allowNull: false,
+          defaultValue: Sequelize.fn('now'),
+          type: Sequelize.DATE,
         },
       })
       .then(() => {
-        return queryInterface.createTable('user_roles', {
+        return queryInterface.createTable('UserRoles', {
           userId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            primaryKey: true,
-            references: { model: 'users', key: 'id' },
+            references: { model: 'Users', key: 'id' },
             type: Sequelize.INTEGER,
           },
           roleId: {
             allowNull: false,
             onDelete: 'CASCADE',
-            primaryKey: true,
-            references: { model: 'roles', key: 'id' },
+            references: { model: 'Roles', key: 'id' },
             type: Sequelize.INTEGER,
+          },
+          createdAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
+          },
+          updatedAt: {
+            allowNull: false,
+            defaultValue: Sequelize.fn('now'),
+            type: Sequelize.DATE,
           },
         });
       });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('user_roles').then(() => {
-      return queryInterface.dropTable('roles');
+    return queryInterface.dropTable('UserRoles').then(() => {
+      return queryInterface.dropTable('Roles');
     });
   },
 };
