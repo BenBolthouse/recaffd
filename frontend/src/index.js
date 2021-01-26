@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { restoreCSRF, fetch } from './store/csrf';
 
 import App from './components/App';
 
@@ -10,7 +11,9 @@ import configureStore from './store';
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
-  window.store = store;
+  restoreCSRF();
+  window.devStore = store;
+  window.devFetch = fetch;
 }
 
 function Root() {
