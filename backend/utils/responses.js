@@ -8,7 +8,7 @@ const { environment: env } = require('../config');
 
 const isDev = env === 'development';
 
-const sanitizeDetails = message => message.replace(/\n\  */g, '');
+const sanitizeDetails = message => message && message.replace(/\n\  */g, '');
 
 /**
  * Express middleware; load templated http responses onto the response object.
