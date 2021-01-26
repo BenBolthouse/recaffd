@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as sessionActions from './store/session'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { restoreCSRF, fetch } from './store/csrf';
+
+import './styles/index.css'
 
 import App from './components/App';
 
@@ -14,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
   window.devStore = store;
   window.devFetch = fetch;
+  window.sessionActions = sessionActions;
 }
 
 function Root() {
