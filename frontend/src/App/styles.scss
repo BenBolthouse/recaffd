@@ -1,0 +1,94 @@
+@use '../styles/colors' as color;
+
+body {
+  overflow: hidden;
+}
+#root {
+  display: block;
+  height: 100%;
+}
+.page-wrapper {
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.page-wrapper.with-navbar {
+  top: 4rem;
+}
+.page {
+  min-height: 100vh;
+  z-index: 300;
+}
+.page-width {
+  grid-template-columns: repeat(12, 8.333333333%);
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  height: 2.5rem;
+  line-height: 2.85rem;
+  padding: 0.15rem 0.75rem 0;
+  &::placeholder {
+    color: color.$black-60;
+  }
+}
+button {
+  background-color: color.$info-inactive;
+  border-radius: 0.25rem;
+  border: none;
+  color: white;
+  display: block;
+  font-size: (18rem / 16);
+  font-weight: 300;
+  padding: 1rem 2rem;
+  width: 100%;
+  &:hover {
+    background-color: color.$info-active;
+    cursor: pointer;
+  }
+}
+
+$page-width-margin-sm: 3rem;
+$page-width-margin-dt: 12rem;
+$page-width-margin-lg: 9rem;
+$page-width-margin-md: 6rem;
+
+@media screen and (min-width: 40rem) {
+  .page-width {
+    margin-left: $page-width-margin-sm;
+    margin-right: $page-width-margin-sm;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 56rem) {
+  .page-width {
+    margin-left: $page-width-margin-md;
+    margin-right: $page-width-margin-md;
+  }
+}
+
+@media screen and (min-width: 72rem) {
+  .page-width {
+    margin-left: $page-width-margin-lg;
+    margin-right: $page-width-margin-lg;
+  }
+}
+
+@media screen and (min-width: 92rem) {
+  .page-width {
+    margin-left: $page-width-margin-dt;
+    margin-right: $page-width-margin-dt;
+  }
+}

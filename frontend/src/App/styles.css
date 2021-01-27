@@ -1,3 +1,95 @@
+body {
+  overflow: hidden;
+}
 
+#root {
+  display: block;
+  height: 100%;
+}
+
+.page-wrapper {
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.page-wrapper.with-navbar {
+  top: 4rem;
+}
+
+.page {
+  min-height: 100vh;
+  z-index: 300;
+}
+
+.page-width {
+  grid-template-columns: repeat(12, 8.333333333%);
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+input[type=email],
+input[type=password],
+input[type=text] {
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  height: 2.5rem;
+  line-height: 2.85rem;
+  padding: 0.15rem 0.75rem 0;
+}
+input[type=email]::placeholder,
+input[type=password]::placeholder,
+input[type=text]::placeholder {
+  color: #999999;
+}
+
+button {
+  background-color: rgba(24, 128, 238, 0.8);
+  border-radius: 0.25rem;
+  border: none;
+  color: white;
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+button:hover {
+  background-color: #1880ee;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 40rem) {
+  .page-width {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 56rem) {
+  .page-width {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+@media screen and (min-width: 72rem) {
+  .page-width {
+    margin-left: 9rem;
+    margin-right: 9rem;
+  }
+}
+@media screen and (min-width: 92rem) {
+  .page-width {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

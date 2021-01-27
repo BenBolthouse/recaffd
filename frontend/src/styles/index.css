@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,11 +14,11 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -51,8 +54,27 @@ div, form {
   display: grid;
 }
 
+input, button {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
-  color: red;
+  font-family: "Lato", Helvetica, sans-serif;
+}
+
+a {
+  color: rgba(24, 128, 238, 0.8);
+}
+a:hover, a:focus {
+  color: #1880ee;
+}
+
+h1, h2 {
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,13 @@
-body {
-  color: red;
-}
+$black-10: hsl(0, 0%, 10%);
+$black-20: hsl(0, 0%, 20%);
+$black-30: hsl(0, 0%, 30%);
+$black-40: hsl(0, 0%, 40%);
+$black-50: hsl(0, 0%, 50%);
+$black-60: hsl(0, 0%, 60%);
+$black-70: hsl(0, 0%, 70%);
+$black-80: hsl(0, 0%, 80%);
+$black-90: hsl(0, 0%, 90%);
+$black-100: hsl(0, 0%, 100%);
+
+$info-inactive: rgba(24, 128, 238, 0.8);
+$info-active: rgba(24, 128, 238, 1);
