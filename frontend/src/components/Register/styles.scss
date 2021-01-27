@@ -1,0 +1,44 @@
+@use '../../styles/colors' as color;
+
+.register {
+  background-color: white;
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  grid-template-columns: auto auto;
+  max-width: 40rem;
+  min-width: 20rem;
+  padding: 2rem 1.5rem;
+  .register__form {
+    input {
+      border: 1px solid color.$black-60;
+      margin-bottom: 1rem;
+    }
+    .register__goto-login {
+      padding: 2.5rem 0 1rem;
+      text-align: center;
+    }
+  }
+  .register__marketing {
+    grid-template-rows: 2.5rem auto auto 3rem;
+    margin: 0 1rem 0 2rem;
+    min-width: 12rem;
+    h1 {
+      font-size: (18rem / 16);
+      font-weight: 600;
+      grid-row: 1 / 2;
+      height: 2.5rem;
+      line-height: 2.5rem;
+    }
+    p {
+      grid-row: 2 / 3;
+      line-height: 1.5rem;
+    }
+    .register__privacy-policy {
+      color: color.$black-60;
+      grid-row: 4 / 5;
+      height: 1rem;
+      padding: 1rem 0;
+      text-align: right;
+    }
+  }
+}

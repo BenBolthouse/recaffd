@@ -1,0 +1,11 @@
+@use '../../styles/colors' as color;
+
+.view {
+  background-color: hsl(0, 0%, 95%);
+  &.form-view {
+    grid-template: auto auto auto / auto auto auto;
+    min-height: 70vh;
+    align-content: center;
+    justify-content: center;
+  }
+}

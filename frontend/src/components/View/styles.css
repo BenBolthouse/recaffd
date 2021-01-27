@@ -1,0 +1,11 @@
+.view {
+  background-color: #f2f2f2;
+}
+.view.form-view {
+  grid-template: auto auto auto/auto auto auto;
+  min-height: 70vh;
+  align-content: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

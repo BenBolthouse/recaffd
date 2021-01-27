@@ -1,3 +1,24 @@
-
+.login {
+  background-color: white;
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  min-width: 20rem;
+  max-width: 24rem;
+  padding: 2rem 1.5rem;
+}
+.login h1 {
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.login input {
+  border: 1px solid #999999;
+  margin-bottom: 1rem;
+}
+.login .login__goto-register {
+  padding: 2.5rem 0 1rem;
+  text-align: center;
+}
 
 /*# sourceMappingURL=styles.css.map */
