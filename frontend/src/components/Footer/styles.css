@@ -1,0 +1,30 @@
+.footer {
+  padding: 2rem 0;
+  background-color: #e6e6e6;
+}
+.footer .page-width {
+  display: block;
+}
+.footer .footer__section-a,
+.footer .footer__section-b,
+.footer .footer__section-c {
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer ul li {
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 56rem) {
+  .footer .page-width {
+    display: grid;
+  }
+  .footer .footer__section-a,
+.footer .footer__section-b,
+.footer .footer__section-c {
+    grid-template-rows: 2rem auto;
+    grid-column: span 4;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
