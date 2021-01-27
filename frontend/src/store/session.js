@@ -29,7 +29,7 @@ export const login = ({ emailAddress, password }) => async dispatch => {
  */
 export const restoreUser = () => async dispatch => {
   const res = await fetch('/api/sessions');
-  dispatch(setUser(res.data.user));
+  dispatch(setUser(res.data.data));
   return res;
 };
 
