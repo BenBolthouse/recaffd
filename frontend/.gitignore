@@ -26,4 +26,4 @@ yarn-error.log*
 generate-react-cli.json
 
 # Design assets and and other local assets
-*.local
+*.local*
