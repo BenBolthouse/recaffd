@@ -1,0 +1,52 @@
+.app-messages-wrapper {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  z-index: 400;
+}
+
+.app-messages {
+  height: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-messages__message {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  text-align: center;
+  grid-column: span 12;
+  height: 2rem;
+  line-height: 2rem;
+  transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+}
+.app-messages__message.show {
+  opacity: 1;
+}
+.app-messages__message.hidden {
+  opacity: 0;
+}
+.app-messages__message.info {
+  color: white;
+  background-color: #007bff;
+}
+.app-messages__message.success {
+  color: white;
+  background-color: #00ff80;
+}
+.app-messages__message.warning {
+  color: white;
+  background-color: #ffb700;
+}
+.app-messages__message.danger {
+  color: white;
+  background-color: #ff0044;
+}
+
+/*# sourceMappingURL=styles.css.map */

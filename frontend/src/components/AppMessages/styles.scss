@@ -1,0 +1,52 @@
+@use '../../styles/colors' as color;
+
+.app-messages-wrapper {
+  display: block;
+  height: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 400;
+}
+.app-messages {
+  height: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.app-messages__message {
+  -moz-transition: opacity $transition-speed;
+  -o-transition: opacity $transition-speed;
+  -webkit-transition: opacity $transition-speed;
+  $border-radius: .5rem;
+  $transition-speed: .2s;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  grid-column: span 12;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  transition: opacity $transition-speed;
+  &.show {
+    opacity: 1;
+  }
+  &.hidden {
+    opacity: 0;
+  }
+  &.info {
+    background-color: color.$info;
+    color: white;
+  }
+  &.success {
+    background-color: color.$success;
+    color: white;
+  }
+  &.warning {
+    background-color: color.$warning;
+    color: white;
+  }
+  &.danger {
+    background-color: color.$danger;
+    color: white;
+  }
+}
