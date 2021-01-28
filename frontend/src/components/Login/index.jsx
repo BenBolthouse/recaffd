@@ -1,43 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { useDidMountEffect } from '../../hooks';
+import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 // State actions
 import * as sessionActions from '../../store/session';
+import * as queuesActions from '../../store/queues';
 
 // Scoped styles
 import './styles.css';
+import './pattern.css';
 
 const Login = () => {
   // Hooks
   const dispatch = useDispatch();
   const history = useHistory();
-  const sessionUser = useSelector(s => s.session.user);
 
   // Component state
   const [emailAddress, setEmailAddress] = useState('Email');
   const [password, setPassword] = useState('');
 
-  // Event handlers
-  const onSubmit = e => {
+  // Handles login and app messages
+  const onSubmit = async e => {
     e.preventDefault();
-    dispatch(
-      sessionActions.login({
-        emailAddress,
-        password,
-      })
-    );
+    if (!emailAddress || !password) {
+      dispatch(queuesActions.pushAppMessage({
+        message: 'Please provide your email and password to login.',
+        type: 'warning',
+      }));
+    }
+    if (emailAddress && password) {
+      try {
+        const { data } = await dispatch(
+          sessionActions.login({
+            emailAddress,
+            password,
+          })
+        );
+        history.push('/');
+        const { username, firstName } = data.data;
+        dispatch(queuesActions.pushAppMessage({
+          message: `Welcome back, ${firstName ? firstName : username}!`,
+          type: 'success',
+        }));
+      }
+      catch (e) {
+        dispatch(queuesActions.pushAppMessage({
+          message: 'Could not login. Please try again.',
+          type: 'danger',
+        }));
+      }
+    }
   };
-
-  // Redirect user to the home screen if there is a session
-  useEffect(() => {
-    if (sessionUser) history.push('/');
-  }, [sessionUser, history]);
 
   return (
     <div className='login'>
       <h1>Login</h1>
-      <form onSubmit={onSubmit}>
+      <form action="#" onSubmit={onSubmit}>
         <fieldset>
           <div className='login__input-group'>
             <input
