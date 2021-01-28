@@ -1,5 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { useDidMountEffect } from '../../hooks';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -9,7 +8,6 @@ import * as queuesActions from '../../store/queues';
 
 // Scoped styles
 import './styles.css';
-import './pattern.css';
 
 const Login = () => {
   // Hooks
