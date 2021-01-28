@@ -73,14 +73,15 @@
   position: relative;
 }
 .navbar .navbar__section-c .navbar__user-menu {
-  background-color: white;
-  border-radius: 0.25rem;
+  background-color: whitesmoke;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   display: grid;
   padding: 0.75rem 1rem 1rem;
   position: absolute;
   right: 0;
-  top: 4.25rem;
+  top: 4rem;
   width: 14rem;
   z-index: 350;
 }
