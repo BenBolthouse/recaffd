@@ -48,7 +48,7 @@ const Navbar = ({ isLoaded }) => {
 
               {sessionUser &&
                 <a
-                  href="#"
+                  href="/"
                   className='navbar__session'
                   onClick={toggleUserMenu}>
                   <img
@@ -70,7 +70,7 @@ const Navbar = ({ isLoaded }) => {
                 <ul className="navbar__user-menu">
                   <Link to="/profile"><li>My Profile</li></Link>
                   <Link to="/collections"><li>My Collections</li></Link>
-                  <a href="#" onClick={logUserOut}><li>Logout</li></a>
+                  <a href="/" onClick={logUserOut}><li>Logout</li></a>
                 </ul>
               }
 
