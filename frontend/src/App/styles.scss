@@ -59,10 +59,11 @@ button {
 }
 
 $page-width-margin-sm: 3rem;
-$page-width-margin-dt: 12rem;
-$page-width-margin-lg: 9rem;
 $page-width-margin-md: 6rem;
+$page-width-margin-lg: 9rem;
+$page-width-margin-dt: 12rem;
 
+// 40rem = 640px
 @media screen and (min-width: 40rem) {
   .page-width {
     margin-left: $page-width-margin-sm;
@@ -72,6 +73,7 @@ $page-width-margin-md: 6rem;
   }
 }
 
+// 56rem = 896px
 @media screen and (min-width: 56rem) {
   .page-width {
     margin-left: $page-width-margin-md;
@@ -79,6 +81,7 @@ $page-width-margin-md: 6rem;
   }
 }
 
+// 72rem = 1152px
 @media screen and (min-width: 72rem) {
   .page-width {
     margin-left: $page-width-margin-lg;
@@ -86,6 +89,7 @@ $page-width-margin-md: 6rem;
   }
 }
 
+// 92rem = 1472px
 @media screen and (min-width: 92rem) {
   .page-width {
     margin-left: $page-width-margin-dt;
