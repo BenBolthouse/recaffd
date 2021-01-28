@@ -3,17 +3,17 @@ import { fetch } from './csrf.js';
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
-const setUser = (user) => ({
+const setUser = user => ({
   type: SET_USER,
-  payload: user
+  payload: user,
 });
 
 const removeUser = () => ({
-  type: REMOVE_USER
+  type: REMOVE_USER,
 });
 
 /**
- * Request a new auth token by providing login credentials. 
+ * Request a new auth token by providing login credentials.
  */
 export const login = ({ emailAddress, password }) => async dispatch => {
   const res = await fetch('/api/sessions', {

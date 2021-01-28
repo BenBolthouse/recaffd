@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
+import queues from './queues';
 
 const rootReducer = combineReducers({
   session,
+  queues,
 });
 
 // setup redux store and thunk based on environment type
