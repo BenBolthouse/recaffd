@@ -15,6 +15,7 @@
   position: relative;
 }
 .app-messages__message {
+  $transition-speed: .1s;
   -moz-transition: opacity $transition-speed;
   -o-transition: opacity $transition-speed;
   -webkit-transition: opacity $transition-speed;
