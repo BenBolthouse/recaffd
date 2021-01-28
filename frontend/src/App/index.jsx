@@ -24,7 +24,7 @@ const App = () => {
     dispatch(sessionActions.restoreUser())
       .then(() => setIsLoaded(true))
       .catch(() => setIsLoaded(true))
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <>
