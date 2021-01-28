@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <div className='register'>
       <div className='register__form'>
-        <form>
+        <form onSubmit={onSubmit}>
           <fieldset>
             <div className='login__input-group'>
               <input
