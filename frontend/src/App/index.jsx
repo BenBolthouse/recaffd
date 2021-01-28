@@ -14,6 +14,7 @@ import { FormView, View, ViewWithNavigation } from '../components/View';
 // Other components
 import Register from '../components/Register';
 import Login from '../components/Login';
+import HomePage from '../components/HomePage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const App = () => {
         <Switch path='/'>
           <Route exact path='/'>
             <ViewWithNavigation isLoaded={isLoaded}>
-              Home Page
+              <HomePage />
             </ViewWithNavigation>
           </Route>
           <Route exact path='/profile'>
