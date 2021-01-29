@@ -25,7 +25,7 @@ if (production) {
     return res.sendFile(path.resolve(__dirname, '../../frontend', 'build', 'index.html'));
   });
 
-  router.use(express.static(path.resolve('../frontend/build')));
+  router.use(express.static(path.resolve(__dirname, '../../frontend', 'build')));
 
   // serve react index as default /api route
   router.get(/^(?!\/?api).*/, (req, res) => {
