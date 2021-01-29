@@ -4,7 +4,9 @@
   "private": true,
   "main": "bin/www",
   "scripts": {
-    "start:production": "node -r dotenv/config ./bin/www"
+    "start": "node ./bin/www",
+    "start:development": "nodemon -r dotenv/config ./bin/www dotenv_config_path=./.env.development",
+    "start:test": "node -r dotenv/config ./bin/www dotenv_config_path=./.env.test"
   },
   "author": "Ben Bolthouse",
   "license": "MIT",

@@ -1,0 +1,4 @@
+npm install --folder frontend
+npm install --folder backend
+npm run build --prefix frontend
+npm run --prefix backend
