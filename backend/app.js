@@ -7,9 +7,7 @@ const express = require('express'),
   csurf = require('csurf'),
   cookieParser = require('cookie-parser');
 
-const { environment: env } = require('./config');
-
-const isProduction = env === 'production';
+const { production } = require('./config');
 
 const app = express();
 
@@ -20,7 +18,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
 
-if (!isProduction) {
+if (!production) {
   app.use(cors());
 }
 app.use(
@@ -32,8 +30,8 @@ app.use(
 app.use(
   csurf({
     cookie: {
-      secure: isProduction,
-      sameSite: isProduction && 'Lax',
+      secure: production,
+      sameSite: production && 'Lax',
       httpOnly: true,
     },
   })
@@ -50,7 +48,7 @@ app.use((err, _req, res, _next) => {
     title: err.title || 'Server Error',
     message: err.message,
     errors: err.errors,
-    stack: isProduction ? null : err.stack,
+    stack: production ? null : err.stack,
   });
 });
 

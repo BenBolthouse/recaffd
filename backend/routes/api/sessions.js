@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const { User, Hash, Role } = require('../../db/models');
+const { Hash, Role, User } = require('../../db/models');
 const { validateSignIn } = require('../utils/validators');
 const { setJwtTokenCookie, restoreUser } = require('./auth');
 

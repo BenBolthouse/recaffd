@@ -6,7 +6,7 @@
 
 const jwt = require("jsonwebtoken");
 
-const { jwtConfig, environment: env } = require("../config");
+const { jwtConfig, production } = require("../config");
 const { User } = require('../db/models');
 const { secret, expiresIn } = jwtConfig;
 
@@ -16,15 +16,13 @@ const { secret, expiresIn } = jwtConfig;
  * @param {Application `User` object} user 
  */
 const setJwtTokenCookie = (res, user) => {
-  const isProduction = env === 'production';
-
   const token = jwt.sign(user, secret, { expiresIn: parseInt(expiresIn) });
 
   res.cookie('authToken', token, {
     maxAge: expiresIn * 1000,
     httpOnly: true,
-    secure: isProduction,
-    sameSite: isProduction && 'Lax',
+    secure: production,
+    sameSite: production && 'Lax',
   });
 
   return token;

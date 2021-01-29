@@ -1,11 +1,11 @@
 const express = require('express');
-let { environment: env } = require('../config');
+let { production } = require('../config');
 
 const router = require('express').Router();
 
 
 // automatically send xsrf cookie token in development environment for react debugging
-if (env !== 'production') {
+if (!production) {
   router.get('/api/csrf/restore', (req, res) => {
     res.cookie('xsrfToken', req.csrfToken());
     return res.json({message: 'CSRF cookie sent with response'});
@@ -16,7 +16,7 @@ if (env !== 'production') {
 router.use('/api', require('./api'));
 
 // serves the react index in production along with xsrf cookie token
-if (env === 'production') {
+if (production) {
   const path = require('path');
 
   // serve react as default / route

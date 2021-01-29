@@ -4,9 +4,7 @@
  * * ===============
  */
 
-const { environment: env } = require('../config');
-
-const isDev = env === 'development';
+const { production } = require('../config');
 
 const sanitizeDetails = message => message && message.replace(/\n\  */g, '');
 
@@ -52,7 +50,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     unauthorized401: (title, message, data, stack) => {
@@ -63,7 +61,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     forbidden403: (title, message, data, stack) => {
@@ -74,7 +72,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     notFound404: (title, message, data, stack) => {
@@ -85,7 +83,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     methodNotAllowed405: (title, message, data, stack) => {
@@ -96,7 +94,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     serverError500: (title, message, data, stack) => {
@@ -107,7 +105,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
     notImplemented501: (title, message, data, stack) => {
@@ -118,7 +116,7 @@ module.exports = (req, res, next) => {
         requestHttpMethod: req.method,
         requestUrl: req.originalUrl,
         data,
-        stack: isDev ? stack : null,
+        stack: !production ? stack : null,
       });
     },
   };
