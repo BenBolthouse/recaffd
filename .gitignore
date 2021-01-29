@@ -106,9 +106,14 @@ dist
 .tern-port
 
 # Project assets on my computer
-__local__
+**.local*
 
 # VS Code launch config and workspace config files
 .vscode
 *.code-workspace
 
+# React gitignore
+
+# Production
+frontend/build
+.DS_Store
