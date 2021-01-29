@@ -8,6 +8,7 @@ import * as queuesActions from '../../store/queues';
 
 // Scoped styles
 import './styles.css';
+import './pattern.css';
 
 const Login = () => {
   // Hooks

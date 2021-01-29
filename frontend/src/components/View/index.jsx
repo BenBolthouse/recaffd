@@ -7,14 +7,13 @@ import AppMessages from '../AppMessages'
 
 // Scoped styles
 import './styles.css';
-import './pattern.css';
 
 /**
  * Render a default view.
  */
 export const View = ({ children, isLoaded }) => {
   return (
-    <div className="page-wrapper">
+    <div id="page" className="page-wrapper">
       <AppMessages />
       <div className="page">
 
@@ -28,12 +27,12 @@ export const View = ({ children, isLoaded }) => {
 /**
  * Render a view with a form container placed dead center on the screen.
  */
-export const FormView = ({ children, isLoaded }) => {
+export const AuthView = ({ children, isLoaded }) => {
   return (
-    <div className="page-wrapper">
+    <div id="page" className="page-wrapper">
       <AppMessages />
       <div className="page">
-        <div className="view form-view">
+        <div className="view auth-view">
           {children}
         </div>
         <Footer isLoaded={isLoaded} />
@@ -49,12 +48,24 @@ export const ViewWithNavigation = ({ children, isLoaded }) => {
   return (
     <>
       <Navbar isLoaded={isLoaded} />
-      <div className="page-wrapper with-navbar">
+      <div id="page" className="page-wrapper with-navbar">
         <AppMessages />
         <div className="page">
           {children}
           <Footer isLoaded={isLoaded} />
         </div>
+      </div>
+    </>
+  )
+}
+
+export const HomePageView = ({ children, isLoaded }) => {
+  return (
+    <>
+      <Navbar isLoaded={isLoaded} />
+      <div id="page" className="page-wrapper with-navbar">
+        <AppMessages />
+        {children}
       </div>
     </>
   )

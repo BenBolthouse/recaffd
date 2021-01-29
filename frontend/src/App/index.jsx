@@ -9,7 +9,7 @@ import * as sessionActions from '../store/session';
 import './styles.css';
 
 // Views components
-import { FormView, View, ViewWithNavigation } from '../components/View';
+import { AuthView, View, ViewWithNavigation } from '../components/View';
 
 // Other components
 import Register from '../components/Register';
@@ -32,14 +32,14 @@ const App = () => {
       <Switch>
         <Switch path='/auth'>
           <Route path='/auth/login'>
-            <FormView isLoaded={isLoaded}>
+            <AuthView isLoaded={isLoaded}>
               <Login />
-            </FormView>
+            </AuthView>
           </Route>
           <Route path='/auth/register'>
-            <FormView isLoaded={isLoaded}>
+            <AuthView isLoaded={isLoaded}>
               <Register />
-            </FormView>
+            </AuthView>
           </Route>
           <Route path='/*'>
             <View isLoaded={isLoaded}>

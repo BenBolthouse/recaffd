@@ -2,7 +2,7 @@
 
 .view {
   background-color: hsl(0, 0%, 95%);
-  &.form-view {
+  &.auth-view {
     grid-template: auto auto auto / auto auto auto;
     min-height: 70vh;
     align-content: center;
