@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     'Business',
     {
       userId: DataTypes.INTEGER,
-      categoryName: DataTypes.STRING,
+      categoryId: DataTypes.INTEGER,
       latitude: DataTypes.NUMBER,
       longitude: DataTypes.NUMBER,
       name: {

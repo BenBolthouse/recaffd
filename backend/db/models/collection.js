@@ -24,15 +24,15 @@ module.exports = (sequelize, DataTypes) => {
   Collection.associate = function (models) {
     Collection.belongsTo(models.User, { foreignKey: 'userId' });
     Collection.belongsToMany(models.Product, {
-      through: 'product_collections',
+      through: 'ProductCollections',
       otherKey: 'productId',
       foreignKey: 'collectionId',
       as: 'products',
     });
     Collection.belongsToMany(models.Business, {
-      through: 'business_collections',
-      otherKey: 'productId',
-      foreignKey: 'businessId',
+      through: 'BusinessCollections',
+      otherKey: 'businessId',
+      foreignKey: 'collectionId',
       as: 'businesses',
     });
   };

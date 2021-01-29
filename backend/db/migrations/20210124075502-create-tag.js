@@ -14,6 +14,16 @@ module.exports = {
           type: Sequelize.STRING(20),
           unique: true,
         },
+        createdAt: {
+          allowNull: false,
+          defaultValue: Sequelize.fn('now'),
+          type: Sequelize.DATE,
+        },
+        updatedAt: {
+          allowNull: false,
+          defaultValue: Sequelize.fn('now'),
+          type: Sequelize.DATE,
+        },
       })
       .then(() => {
         return queryInterface.createTable('BusinessTags', {
