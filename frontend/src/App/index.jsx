@@ -9,7 +9,7 @@ import * as sessionActions from '../store/session';
 import './styles.css';
 
 // Views components
-import { AuthView, View, ViewWithNavigation } from '../components/View';
+import { HomeView, View, ViewWithNav } from '../components/View';
 
 // Other components
 import Register from '../components/Register';
@@ -32,14 +32,14 @@ const App = () => {
       <Switch>
         <Switch path='/auth'>
           <Route path='/auth/login'>
-            <AuthView isLoaded={isLoaded}>
+            <View isLoaded={isLoaded}>
               <Login />
-            </AuthView>
+            </View>
           </Route>
           <Route path='/auth/register'>
-            <AuthView isLoaded={isLoaded}>
+            <View isLoaded={isLoaded}>
               <Register />
-            </AuthView>
+            </View>
           </Route>
           <Route path='/*'>
             <View isLoaded={isLoaded}>
@@ -49,24 +49,24 @@ const App = () => {
         </Switch>
         <Switch path='/'>
           <Route exact path='/'>
-            <ViewWithNavigation isLoaded={isLoaded}>
+            <HomeView isLoaded={isLoaded}>
               <HomePage />
-            </ViewWithNavigation>
+            </HomeView>
           </Route>
           <Route exact path='/profile'>
-            <ViewWithNavigation isLoaded={isLoaded}>
+            <ViewWithNav isLoaded={isLoaded}>
               Profile
-            </ViewWithNavigation>
+            </ViewWithNav>
           </Route>
           <Route path='/collections/:id'>
-            <ViewWithNavigation isLoaded={isLoaded}>
+            <ViewWithNav isLoaded={isLoaded}>
               Collections
-            </ViewWithNavigation>
+            </ViewWithNav>
           </Route>
           <Route path='/businesses/:id'>
-            <ViewWithNavigation isLoaded={isLoaded}>
+            <ViewWithNav isLoaded={isLoaded}>
               Businesses
-            </ViewWithNavigation>
+            </ViewWithNav>
           </Route>
         </Switch>
         <Route path="*">404</Route>
