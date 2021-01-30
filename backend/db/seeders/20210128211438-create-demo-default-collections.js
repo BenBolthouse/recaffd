@@ -17,8 +17,8 @@ module.exports = {
         ],
         {}
       )
-      .then(
-        queryInterface.bulkInsert(
+      .then(() => {
+        return queryInterface.bulkInsert(
           'Hashes',
           [
             {
@@ -27,10 +27,10 @@ module.exports = {
             },
           ],
           {}
-        )
-      )
-      .then(
-        queryInterface.bulkInsert(
+        );
+      })
+      .then(() => {
+        return queryInterface.bulkInsert(
           'UserHashes',
           [
             {
@@ -39,10 +39,10 @@ module.exports = {
             },
           ],
           {}
-        )
-      )
-      .then(
-        queryInterface.bulkInsert(
+        );
+      })
+      .then(() => {
+        return queryInterface.bulkInsert(
           'Collections',
           [
             {
@@ -55,10 +55,10 @@ module.exports = {
             },
           ],
           {}
-        )
-      )
-      .then(
-        queryInterface.bulkInsert(
+        );
+      })
+      .then(() => {
+        return queryInterface.bulkInsert(
           'BusinessCollections',
           [
             {
@@ -87,10 +87,10 @@ module.exports = {
             },
           ],
           {}
-        )
-      )
-      .then(
-        queryInterface.bulkInsert(
+        );
+      })
+      .then(() => {
+        return queryInterface.bulkInsert(
           'ProductCollections',
           [
             {
@@ -123,8 +123,8 @@ module.exports = {
             },
           ],
           {}
-        )
-      )
+        );
+      });
   },
   down: (queryInterface, Sequelize) => {
     queryInterface.sequelize.query('ALTER SEQUENCE "Users_id_seq" RESTART WITH 501;');
