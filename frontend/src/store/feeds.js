@@ -1,15 +1,10 @@
 import { fetch } from './csrf';
 
-const SEARCH = 'search';
-const VIEW = 'view';
-const APPEND_VIEW = 'appendToView';
-
 const SET_SEARCH_FEED = 'feeds/setSearchFeed';
-const SET_VIEW_FEED = 'feeds/setViewFeed';
-const APPEND_VIEW_FEED = 'feeds/appendViewFeed';
+const SET_HOME_FEED = 'feeds/setHomeFeed';
 
-const setViewFeed = feed => ({
-  type: SET_VIEW_FEED,
+const setHomeFeed = feed => ({
+  type: SET_HOME_FEED,
   payload: feed,
 });
 
@@ -21,9 +16,8 @@ const setSearchFeed = feed => ({
 /**
  * Fetch a list of entities based on some criteria.
  */
-export const fetchCustomFeed = predicates => async dispatch => {
+export const fetchHomeFeed = predicates => async dispatch => {
   const {
-    location,
     offset,
     limit,
     sortedBy,
@@ -41,28 +35,70 @@ export const fetchCustomFeed = predicates => async dispatch => {
 
   const res = await fetch(urlQuery);
 
-  switch (location) {
-    case VIEW:
-      dispatch(setViewFeed(res.data.data));
-      break;
-    case SEARCH:
-      dispatch(setSearchFeed(res.data.data));
-      break;
+  // Simplify tags
+  if (res.data.data.feedItems) {
+    const { feedItems } = res.data.data;
+    feedItems.forEach(item => {
+      if(item.tags.length) {
+        const tags = item.tags.map(tag => tag.name);
+        item.tags = tags;
+      }
+    })
   }
+
+  dispatch(setHomeFeed(res.data.data));
   return res;
 };
 
 const initialState = {
-  view: [],
-  search: [],
+  home: {
+    offset: 0,
+    limit: 10,
+    sortedBy: 'BEST_RATED',
+    includeProducts: true,
+    includeBusinesses: false,
+    includeFavorites: true,
+    includeCheckIns: true,
+    items: [],
+  },
+  search: {
+    offset: 0,
+    limit: 10,
+    sortedBy: 'BEST_RATED',
+    includeProducts: true,
+    includeBusinesses: true,
+    includeFavorites: true,
+    includeCheckIns: true,
+    items: [],
+  },
 };
 
 function reducer(state = initialState, { type, payload }) {
   let newState;
   switch (type) {
-    case SET_VIEW_FEED:
+    case SET_HOME_FEED:
+      const {
+        offset,
+        limit,
+        sortedBy,
+        includeProducts,
+        includeBusinesses,
+        includeFavorites,
+        includeCheckIns,
+        feedItems,
+      } = payload;
       newState = Object.assign({}, state);
-      newState.view = [...newState.view, ...payload];
+      const items = [...newState.home.items, ...feedItems]
+      newState.home = {
+        offset,
+        limit,
+        sortedBy,
+        includeProducts,
+        includeBusinesses,
+        includeFavorites,
+        includeCheckIns,
+        items,
+      }
       return newState;
     case SET_SEARCH_FEED:
       newState = Object.assign({}, state);
