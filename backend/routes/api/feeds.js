@@ -17,6 +17,7 @@ router.get(
     let user;
     let feedBusinesses;
     let feedProducts;
+    let order;
 
     // Request query parameters
     let {
@@ -25,6 +26,8 @@ router.get(
       sortedBy,
       includeProducts,
       includeBusinesses,
+      includeFavorites,
+      includeCheckIns,
     } = req.query;
 
     // Get the session user with collections
@@ -47,20 +50,20 @@ router.get(
 
     // Set the sort array based on the requested sort
     switch (sortedBy) {
-      case 'nameAlphabeticalDesc':
-        sortedBy = ['name', 'ASC'];
-      case 'nameAlphabeticalAsc':
-        sortedBy = ['name', 'DESC'];
-      case 'createdAtDateDesc':
-        sortedBy = ['createdAt', 'ASC'];
-      case 'createdAtDateAsc':
-        sortedBy = ['createdAt', 'DESC'];
-      case 'ratingDesc':
-        sortedBy = ['rating', 'ASC'];
-      case 'ratingAsc':
-        sortedBy = ['rating', 'DESC'];
+      case 'NAME_A_Z':
+        order = ['name', 'ASC'];
+        break;
+      case 'NAME_Z_A':
+        order = ['name', 'DESC'];
+        break;
+      case 'WORST_RATED':
+        order = ['rating', 'ASC'];
+        break;
+      case 'BEST_RATED':
+        order = ['rating', 'DESC'];
+        break;
       default:
-        sortedBy = ['name', 'ASC'];
+        order = ['name', 'ASC'];
     }
 
     // Get the data by sort order
@@ -68,14 +71,14 @@ router.get(
       offset,
       limit,
       order: [['id', 'ASC']],
-      // order: [sortedBy],
+      order: [order],
       include: { model: Tag, as: 'tags' },
     });
     feedProducts = await Product.findAndCountAll({
       offset,
       limit,
       order: [['id', 'ASC']],
-      // order: [sortedBy],
+      order: [order],
       include: { model: Tag, as: 'tags' },
     });
 
@@ -121,14 +124,21 @@ router.get(
         defaultCollectionData: checkinsCollection.businesses,
         feedData: feedBusinesses.rows,
       });
-      // flagInDefaultCollection(products, feedProducts.rows, 'favoritesCollectionId');
-      // flagInDefaultCollection(checkins, feedBusinesses.rows, 'checkinsCollectionId');
     }
 
-    const out = [];
+    const out = {
+      offset: offset || 0,
+      limit: limit || 20,
+      sortedBy: sortedBy || 'NAME_A_Z',
+      includeProducts: Boolean(includeProducts) || true,
+      includeBusinesses: Boolean(includeBusinesses) || false,
+      includeFavorites: Boolean(includeFavorites) || false,
+      includeCheckIns: Boolean(includeCheckIns) || false,
+      feedItems: []
+    };
 
-    if (includeProducts) out.push(...feedBusinesses.rows);
-    if (includeBusinesses) out.push(...feedProducts.rows);
+    if (includeProducts) out.feedItems.push(...feedBusinesses.rows);
+    if (includeBusinesses) out.feedItems.push(...feedProducts.rows);
 
     return res.out.ok200('Success', out);
   })
