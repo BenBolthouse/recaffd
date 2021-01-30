@@ -4,23 +4,25 @@
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 4.5rem;
   z-index: 400;
 }
 
 .app-messages {
   height: 2rem;
-  overflow: hidden;
-  position: relative;
+  display: block;
+  text-align: center;
+  z-index: 401;
 }
 
 .app-messages__message {
-  -moz-transition: opacity 0.1s;
-  -o-transition: opacity 0.1s;
-  -webkit-transition: opacity 0.1s;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  grid-column: span 12;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  display: inline-block;
+  min-width: 20rem;
   height: 2rem;
   line-height: 2rem;
   text-align: center;

@@ -8,12 +8,14 @@ body {
 }
 
 .page-wrapper {
+  background-color: #f2f2f2;
   overflow-y: scroll;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
+  z-index: 300;
 }
 
 .page-wrapper.with-navbar {
@@ -21,8 +23,8 @@ body {
 }
 
 .page {
-  min-height: 100vh;
-  z-index: 300;
+  height: 100%;
+  z-index: 301;
 }
 
 .page-width {
@@ -31,6 +33,9 @@ body {
   margin-right: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.page-width.no-cols {
+  grid-template-columns: 100%;
 }
 
 input[type=email],
