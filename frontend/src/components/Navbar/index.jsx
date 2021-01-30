@@ -28,6 +28,7 @@ const Navbar = ({ isLoaded }) => {
     e.preventDefault();
     dispatch(sessionActions.logout())
       .then(() => {
+        history.push('/');
         dispatch(queueActions.pushAppMessage({
           message: 'You have been logged out.',
           type: 'success'
@@ -36,7 +37,7 @@ const Navbar = ({ isLoaded }) => {
   }
 
   return (
-    <div className="navbar">
+    <div id="navbar" className="navbar">
       <div className="page-width">
         {isLoaded &&
           <>
