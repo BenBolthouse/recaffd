@@ -1,0 +1,14 @@
+{
+  "name": "recaffd",
+  "version": "0.1.0",
+  "private": true,
+  "main": "backend/bin/www",
+  "scripts": {
+    "prestart": "npm i --folder backend && npm i --folder frontend && npm --prefix frontend run build",
+    "start": "npm --prefix backend start"
+  },
+  "dependencies": {
+    "recaffd-backend": "file:backend",
+    "recaffd-frontend": "file:frontend"
+  }
+}
