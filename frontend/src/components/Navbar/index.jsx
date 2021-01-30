@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 // State actions
 import * as sessionActions from '../../store/session';
+import * as queueActions from '../../store/queues';
 
 // Scoped styles
 import './styles.css'
@@ -26,7 +27,12 @@ const Navbar = ({ isLoaded }) => {
   const logUserOut = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout())
-      .then(history.push('/'));
+      .then(() => {
+        dispatch(queueActions.pushAppMessage({
+          message: 'You have been logged out.',
+          type: 'success'
+        }))
+      });
   }
 
   return (
