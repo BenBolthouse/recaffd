@@ -29,11 +29,11 @@ const AppMessages = () => {
   }, [queues]);
 
   return (
-    <div className='app-messages-wrapper'>
-      <div className='app-messages page-width'>
-        <div className={`app-messages__message ${message.type} ${messageVisual}`}>
+    <div id="messages" className='app-messages-wrapper'>
+      <div className='app-messages page-width no-cols'>
+        <p className={`app-messages__message ${message.type} ${messageVisual}`}>
           {message.message}
-        </div>
+        </p>
       </div>
     </div>
   );
