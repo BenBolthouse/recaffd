@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Loader from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetch } from '../../store/csrf';
 
 // Components
 import VisibilitySensor from 'react-visibility-sensor';
 import Stars from '../Stars';
-import { FaThumbsUp } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { FaDoorOpen } from 'react-icons/fa';
 
 // State actions
@@ -44,7 +45,7 @@ const HomePage = () => {
       <div className='home-view__feed'>
         <div className='home-view__feed-item-container'>
           {homeFeedItems.length
-            ? homeFeedItems.map(item => <FeedItem key={`home-page-feed-${item.id}`} item={item} />)
+            ? homeFeedItems.map(item => <FeedProduct key={`home-page-feed-${item.id}`} item={item} />)
             : ''}
         </div>
         {!homeFeedItems.length && (
@@ -66,45 +67,64 @@ const HomePage = () => {
   );
 };
 
-const FeedItem = ({ item }) => {
+const FeedProduct = ({ item }) => {
+  // Component state
+  const [isInFavorites, setIsInFavorites] = useState(item.favorites && item.favorites.inCollection ? true : false);
+
+  // Event handlers
+  const preventDefault = e => e.preventDefault();
+
+  const toggleFavorites = async () => {
+    if (!isInFavorites) {
+      const res = await fetch('/api/collections/favorites', {
+        method: 'PATCH',
+        body: JSON.stringify({
+          itemId: item.id,
+          itemType: 'product',
+          collectionId: item.favorites.collectionId,
+        }),
+      });
+      if (res.ok) setIsInFavorites(true);
+      return;
+    }
+    const res = await fetch('/api/collections/favorites', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        itemId: item.id,
+        itemType: 'product',
+        collectionId: item.favorites.collectionId,
+      }),
+    });
+    if (res.ok) setIsInFavorites(false);
+    return;
+  };
+
   const sessionUser = useSelector(s => s.session.user);
   return (
-    <>
-      {item.businessId && (
-        <div className='feed-item'>
-          <Link to={`/businesses/${item.businessId}/products/${item.id}`}>
-            <h3>{item.name}</h3>
-          </Link>
-          <p>{item.description}</p>
-          {item.tags.length > 0 && (
-            <ul className='feed-item__tags'>
-              {item.tags.map(tag => (
-                <li key={`product-${item.id}-tag-${tag}`}>{tag}</li>
-              ))}
-            </ul>
-          )}
-          <Stars qty={item.ratingCeiling} edit={'no-edit'} parentId={`home-page-feed-${item.id}`} />
-          {sessionUser && (
-            <div className='feed-item__session-controls'>
-              <a
-                href='/'
-                className={`feed-item__add-to-favorites ${
-                  item.favorites ? 'in-favorites' : 'not-in-favorites'
-                }`}>
-                <FaThumbsUp />
-              </a>
-              <a
-                href='/'
-                className={`feed-item__add-to-checkins ${
-                  item.checkins ? 'in-checkins' : 'not-in-checkins'
-                }`}>
-                <FaDoorOpen />
-              </a>
-            </div>
-          )}
+    <div className='feed-item'>
+      <Link to={`/businesses/${item.businessId}/products/${item.id}`}>
+        <h3>{item.name}</h3>
+      </Link>
+      <p>{item.description}</p>
+      {item.tags.length > 0 && (
+        <ul className='feed-item__tags'>
+          {item.tags.map(tag => (
+            <li key={`product-${item.id}-tag-${tag}`}>{tag}</li>
+          ))}
+        </ul>
+      )}
+      <Stars qty={item.ratingCeiling} edit={'no-edit'} parentId={`home-page-feed-${item.id}`} />
+      {sessionUser && (
+        <div className='feed-item__session-controls'>
+          <a
+            href='/'
+            onClick={preventDefault}
+            className={`feed-item__add-to-favorites ${isInFavorites ? 'in-favorites' : 'not-in-favorites'}`}>
+            <FaHeart onClick={toggleFavorites} />
+          </a>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -4,16 +4,16 @@
  * * ==================================
  */
 
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
-const { jwtConfig, production } = require("../config");
-const { User } = require('../db/models');
+const { jwtConfig, production } = require('../config');
+const { Role, User } = require('../db/models');
 const { secret, expiresIn } = jwtConfig;
 
 /**
  * Set the response JWT cookie with user identity claims.
  * @param {Express middleware response object} res
- * @param {Application `User` object} user 
+ * @param {Application `User` object} user
  */
 const setJwtTokenCookie = (res, user) => {
   const token = jwt.sign(user, secret, { expiresIn: parseInt(expiresIn) });
@@ -30,9 +30,9 @@ const setJwtTokenCookie = (res, user) => {
 
 /**
  * Express middleware; get the user from the database and attach to the request.
- * @param {Express middleware request object} req 
- * @param {Express middleware response object} res 
- * @param {Express middleware next function} next 
+ * @param {Express middleware request object} req
+ * @param {Express middleware response object} res
+ * @param {Express middleware next function} next
  */
 const restoreUser = (req, res, next) => {
   const { authToken } = req.cookies;
@@ -42,9 +42,8 @@ const restoreUser = (req, res, next) => {
 
     try {
       const { id } = payload;
-      req.user = await User.findByPk(id);
-    }
-    catch (e) {
+      req.user = await User.findByPk(id, { include: { model: Role, as: 'roles' } });
+    } catch (e) {
       res.clearCookie('token');
       return next();
     }
@@ -53,7 +52,7 @@ const restoreUser = (req, res, next) => {
 
     return next();
   });
-}
+};
 
 /**
  * Express middleware; grant access to only those who have an account.
@@ -61,7 +60,7 @@ const restoreUser = (req, res, next) => {
 const inUserRole = [
   restoreUser,
   (req, res, next) => {
-    if (req.user.roles.find('USER')) return next();
+    if (req.user.roles.find(r => r.name === 'USER')) return next();
     else
       return res.out.unauthorized401(
         'Unauthorized',

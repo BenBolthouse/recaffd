@@ -43,8 +43,7 @@ const Navbar = ({ isLoaded }) => {
           <>
             <Link className='navbar__section-a' to='/'>
               <img src="/images/logo_48.svg" alt="Logo" />
-              <span className="brand-a">Recaff</span>
-              <span className="brand-b">d</span>
+              <span className="brand-a">Recaffd</span>
             </Link>
             <div className='navbar__section-b'>
               <input type="text"
@@ -74,7 +73,7 @@ const Navbar = ({ isLoaded }) => {
               }
 
               {(sessionUser && userMenuIsOpen) &&
-                <ul className="navbar__user-menu">
+                <ul className="navbar__user-menu" onMouseLeave={toggleUserMenu}> 
                   <Link to="/profile"><li>My Profile</li></Link>
                   <Link to="/collections"><li>My Collections</li></Link>
                   <a href="/" onClick={logUserOut}><li>Logout</li></a>

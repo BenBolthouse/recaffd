@@ -94,9 +94,13 @@ router.get(
         const feedDataItem = feedData[i];
         if (defCollectionDataIds.includes(feedDataItem.id))
           feedDataItem.dataValues[defaultCollectionName] = {
-            collectionId: defaultCollectionId
+            inCollection: true,
+            collectionId: defaultCollectionId,
           };
-        else feedDataItem.dataValues[defaultCollectionName] = false;
+        else feedDataItem.dataValues[defaultCollectionName] = {
+          inCollection: false,
+          collectionId: defaultCollectionId,
+        };
       }
     };
 

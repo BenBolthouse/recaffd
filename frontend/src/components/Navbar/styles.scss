@@ -26,9 +26,12 @@
       height: 3rem;
       width: 3rem;
     }
-    .brand-a,
-    .brand-b {
+    .brand-a {
       color: white;
+      font-family: 'Bebas Neue';
+      font-size: (32rem / 16);
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
       height: 2.8rem;
       line-height: 3rem;
       padding: 0.2rem 0 0 0.5rem;
@@ -36,19 +39,6 @@
       &:focus {
         text-shadow: 0 3px 1px black;
       }
-    }
-    .brand-a {
-      font-family: 'Bebas Neue';
-      font-size: (32rem / 16);
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-    }
-    .brand-b {
-      font-family: 'Oswald';
-      font-size: (28rem / 16);
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-      padding: 0 5rem;
     }
   }
   .navbar__section-b,
@@ -76,7 +66,7 @@
   .navbar__section-c {
     position: relative;
     .navbar__user-menu {
-      background-color: rgb(245,245,245);
+      background-color: white;
       border-bottom-left-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -86,7 +76,6 @@
       right: 0;
       top: 4rem;
       width: 14rem;
-      z-index: 350;
       a {
         text-decoration: none;
         margin-top: 2px;
