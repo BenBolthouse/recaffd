@@ -1,31 +1,31 @@
 import { fetch } from './csrf';
 
-const SET_SEARCH_FEED = 'feeds/setSearchFeed';
 const SET_HOME_FEED = 'feeds/setHomeFeed';
+const RESET_HOME_FEED = 'feeds/resetHomeFeed';
 
-const setHomeFeed = feed => ({
-  type: SET_HOME_FEED,
-  payload: feed,
-});
+const initialState = {
+  home: {
+    offset: 0,
+    limit: 10,
+    sortedBy: 'RATING_DESC',
+    includeProducts: true,
+    includeBusinesses: false,
+    includeFavorites: true,
+    includeCheckIns: true,
+    items: [],
+  },
+};
 
-const setSearchFeed = feed => ({
-  type: SET_SEARCH_FEED,
-  payload: feed,
-});
-
-/**
- * Fetch a list of entities based on some criteria.
- */
-export const fetchHomeFeed = predicates => async dispatch => {
+const fetchHomeFeed = async state => {
   const {
     offset,
     limit,
     sortedBy,
-    includeProducts,
     includeBusinesses,
+    includeProducts,
     includeFavorites,
     includeCheckIns,
-  } = predicates;
+  } = state;
 
   let urlQuery = '/api/feeds?offset=' + offset + '&limit=' + limit + '&sortedBy=' + sortedBy;
   includeBusinesses && (urlQuery += '&includeBusinesses=true');
@@ -33,76 +33,65 @@ export const fetchHomeFeed = predicates => async dispatch => {
   includeFavorites && (urlQuery += '&includeFavorites=true');
   includeCheckIns && (urlQuery += '&includeCheckIns=true');
 
-  const res = await fetch(urlQuery);
+  return await fetch(urlQuery);
+};
 
-  // Simplify tags
-  if (res.data.data.feedItems) {
-    const { feedItems } = res.data.data;
-    feedItems.forEach(item => {
-      if(item.tags.length) {
-        const tags = item.tags.map(tag => tag.name);
-        item.tags = tags;
-      }
-    })
-  }
+const setHomeFeedAction = state => ({
+  type: SET_HOME_FEED,
+  payload: state,
+});
 
-  dispatch(setHomeFeed(res.data.data));
+const resetHomeFeedAction = (state) => ({
+  type: RESET_HOME_FEED,
+  payload: state,
+});
+
+const simplifyTags = feedItems => {
+  feedItems.forEach(item => {
+    if (item.tags.length) {
+      const tags = item.tags.map(tag => tag.name);
+      item.tags = tags;
+    }
+  });
+};
+
+/**
+ * Fetch a list of entities based on some criteria.
+ */
+export const setHomeFeed = state => async dispatch => {
+  const res = await fetchHomeFeed(state);
+  const { data } = res.data;
+  simplifyTags(data.feedItems);
+  dispatch(setHomeFeedAction(data));
   return res;
 };
 
-const initialState = {
-  home: {
-    offset: 0,
-    limit: 10,
-    sortedBy: 'BEST_RATED',
-    includeProducts: true,
-    includeBusinesses: false,
-    includeFavorites: true,
-    includeCheckIns: true,
-    items: [],
-  },
-  search: {
-    offset: 0,
-    limit: 10,
-    sortedBy: 'BEST_RATED',
-    includeProducts: true,
-    includeBusinesses: true,
-    includeFavorites: true,
-    includeCheckIns: true,
-    items: [],
-  },
+export const resetHomeFeed = state => async dispatch => {
+  const res = await fetchHomeFeed(state);
+  const { data } = res.data;
+  simplifyTags(data.feedItems);
+  dispatch(resetHomeFeedAction(data));
+  return res;
 };
 
 function reducer(state = initialState, { type, payload }) {
   let newState;
   switch (type) {
     case SET_HOME_FEED:
-      const {
-        offset,
-        limit,
-        sortedBy,
-        includeProducts,
-        includeBusinesses,
-        includeFavorites,
-        includeCheckIns,
-        feedItems,
-      } = payload;
       newState = Object.assign({}, state);
-      const items = [...newState.home.items, ...feedItems]
-      newState.home = {
-        offset,
-        limit,
-        sortedBy,
-        includeProducts,
-        includeBusinesses,
-        includeFavorites,
-        includeCheckIns,
-        items,
-      }
+      newState.home.appendCount = state.appendCount + 1;
+      newState.home.limit = payload.limit;
+      newState.home.offset = payload.offset;
+      newState.home.sortedBy = payload.sortedBy;
+      newState.home.items = [...newState.home.items, ...payload.feedItems];
       return newState;
-    case SET_SEARCH_FEED:
+    case RESET_HOME_FEED:
       newState = Object.assign({}, state);
-      newState.search.push(...payload);
+      newState.home.appendCount = state.appendCount + 1;
+      newState.home.limit = payload.limit;
+      newState.home.offset = payload.offset;
+      newState.home.sortedBy = payload.sortedBy;
+      newState.home.items = [...payload.feedItems];
       return newState;
     default:
       return state;

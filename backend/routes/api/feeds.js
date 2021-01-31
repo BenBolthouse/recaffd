@@ -50,35 +50,33 @@ router.get(
 
     // Set the sort array based on the requested sort
     switch (sortedBy) {
-      case 'NAME_A_Z':
-        order = ['name', 'ASC'];
+      case 'NAME_ASC':
+        order = [['name', 'ASC']];
         break;
-      case 'NAME_Z_A':
-        order = ['name', 'DESC'];
+      case 'NAME_DESC':
+        order = [['name', 'DESC']];
         break;
-      case 'WORST_RATED':
-        order = ['rating', 'ASC'];
+      case 'RATING_ASC':
+        order = [['rating', 'ASC'], ['name', 'ASC']];
         break;
-      case 'BEST_RATED':
-        order = ['rating', 'DESC'];
+      case 'RATING_DESC':
+        order = [['rating', 'DESC'], ['name', 'ASC']];
         break;
       default:
-        order = ['name', 'ASC'];
+        order = [['name', 'ASC']];
     }
 
     // Get the data by sort order
     feedBusinesses = await Business.findAndCountAll({
       offset,
       limit,
-      order: [['id', 'ASC']],
-      order: [order],
+      order: order,
       include: { model: Tag, as: 'tags' },
     });
     feedProducts = await Product.findAndCountAll({
       offset,
       limit,
-      order: [['id', 'ASC']],
-      order: [order],
+      order: order,
       include: { model: Tag, as: 'tags' },
     });
 
@@ -127,8 +125,8 @@ router.get(
     }
 
     const out = {
-      offset: offset || 0,
-      limit: limit || 20,
+      offset: Number(offset) || 0,
+      limit: Number(limit) || 20,
       sortedBy: sortedBy || 'NAME_A_Z',
       includeProducts: Boolean(includeProducts) || true,
       includeBusinesses: Boolean(includeBusinesses) || false,
@@ -137,8 +135,8 @@ router.get(
       feedItems: []
     };
 
-    if (includeProducts) out.feedItems.push(...feedBusinesses.rows);
-    if (includeBusinesses) out.feedItems.push(...feedProducts.rows);
+    if (includeProducts) out.feedItems.push(...feedProducts.rows);
+    if (includeBusinesses) out.feedItems.push(...feedBusinesses.rows);
 
     return res.out.ok200('Success', out);
   })

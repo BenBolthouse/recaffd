@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loader from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -18,60 +18,36 @@ import './styles.css';
 const HomePage = () => {
   // Hooks
   const dispatch = useDispatch();
-  const feed = useSelector(s => s.feeds.home);
+  const homeFeed = useSelector(s => s.feeds.home);
+  const homeFeedItems = useSelector(s => s.feeds.home.items);
 
   // Component state
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isFirstRender, setIsFirstRender] = useState(true);
-  const [includeProducts, setIncludeProducts] = useState(false);
-  const [includeBusinesses, setIncludeBusinesses] = useState(true);
+  const [appendCount, setAppendCount] = useState(true);
   const [offset, setOffset] = useState(0);
-  const [sortedBy, setSortedBy] = useState('BEST_RATED');
-  const [limit, setLimit] = useState(10);
 
   // Side effects
   useEffect(() => {
     dispatch(
-      feedsActions.fetchHomeFeed({
-        sortedBy,
-        offset,
-        limit,
-        includeProducts,
-        includeBusinesses,
-      })
+      feedsActions.setHomeFeed({ ...homeFeed, offset })
     ).then(() => {
-      setIsLoaded(true);
-      setOffset(offset + limit);
+      setOffset(offset + homeFeed.limit);
     });
-  }, []);
+  }, [appendCount]);
 
   // Event handlers
-  const appendFeedItems = evt => {
-    const lol = isFirstRender;
-    if (!isFirstRender) {
-      dispatch(
-        feedsActions.fetchHomeFeed({
-          sortedBy,
-          offset,
-          limit,
-          includeProducts,
-          includeBusinesses,
-        })
-      );
-      return setOffset(offset + limit);
-    }
-    return setIsFirstRender(false);
-  };
+  const append = evt => {
+    if (evt) return setAppendCount(appendCount + 1);
+  }
 
   return (
     <div className='home-view'>
       <div className='home-view__feed'>
         <div className='home-view__feed-item-container'>
-          {feed.items.length
-            ? feed.items.map(item => <FeedItem key={`home-page-feed-${item.id}`} item={item} />)
+          {homeFeedItems.length
+            ? homeFeedItems.map(item => <FeedItem key={`home-page-feed-${item.id}`} item={item} />)
             : ''}
         </div>
-        {!isLoaded && (
+        {!homeFeedItems.length && (
           <>
             <div className='home-view__feed-awaiting'>
               <Loader type={'bubbles'} color={'#bbbbbb'} height={128} width={128} />
@@ -79,7 +55,7 @@ const HomePage = () => {
           </>
         )}
       </div>
-      <VisibilitySensor onChange={appendFeedItems}>
+      <VisibilitySensor onChange={evt => append(evt)}>
         <div className='home-view__end-of-feed'>
           <div className='home-view__feed-appending'>
             <Loader type={'spin'} color={'#bbbbbb'} height={32} width={32} />
@@ -107,7 +83,7 @@ const FeedItem = ({ item }) => {
               ))}
             </ul>
           )}
-          <Stars qty={item.ratingCeiling} edit={'no-edit'} />
+          <Stars qty={item.ratingCeiling} edit={'no-edit'} parentId={`home-page-feed-${item.id}`} />
           {sessionUser && (
             <div className='feed-item__session-controls'>
               <a
