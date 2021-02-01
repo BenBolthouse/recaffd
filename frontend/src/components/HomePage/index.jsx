@@ -43,9 +43,9 @@ const HomePage = () => {
   return (
     <div className='home-view'>
       <div className='home-view__feed'>
-        <div className='home-view__feed-item-container'>
+        <div>
           {homeFeedItems.length
-            ? homeFeedItems.map(item => <FeedProduct key={`home-page-feed-${item.id}`} item={item} />)
+            ? homeFeedItems.map(item => <FeedItem key={`home-page-feed-${item.id}`} item={item} />)
             : ''}
         </div>
         {!homeFeedItems.length && (
@@ -55,22 +55,21 @@ const HomePage = () => {
             </div>
           </>
         )}
+        <VisibilitySensor onChange={evt => append(evt)}>
+          <div>.</div>
+        </VisibilitySensor>
       </div>
-      <VisibilitySensor onChange={evt => append(evt)}>
-        <div className='home-view__end-of-feed'>
-          <div className='home-view__feed-appending'>
-            <Loader type={'spin'} color={'#bbbbbb'} height={32} width={32} />
-          </div>
-        </div>
-      </VisibilitySensor>
     </div>
   );
 };
 
-const FeedProduct = ({ item }) => {
+const FeedItem = ({ item }) => {
   // Component state
   const [isInFavorites, setIsInFavorites] = useState(item.favorites && item.favorites.inCollection ? true : false);
 
+  // Redux state
+  const sessionUser = useSelector(s => s.session.user);
+  
   // Event handlers
   const preventDefault = e => e.preventDefault();
 
@@ -99,32 +98,38 @@ const FeedProduct = ({ item }) => {
     return;
   };
 
-  const sessionUser = useSelector(s => s.session.user);
   return (
-    <div className='feed-item'>
-      <Link to={`/businesses/${item.businessId}/products/${item.id}`}>
-        <h3>{item.name}</h3>
-      </Link>
-      <p>{item.description}</p>
-      {item.tags.length > 0 && (
-        <ul className='feed-item__tags'>
-          {item.tags.map(tag => (
-            <li key={`product-${item.id}-tag-${tag}`}>{tag}</li>
-          ))}
-        </ul>
-      )}
-      <Stars qty={item.ratingCeiling} edit={'no-edit'} parentId={`home-page-feed-${item.id}`} />
-      {sessionUser && (
-        <div className='feed-item__session-controls'>
-          <a
-            href='/'
-            onClick={preventDefault}
-            className={`feed-item__add-to-favorites ${isInFavorites ? 'in-favorites' : 'not-in-favorites'}`}>
-            <FaHeart onClick={toggleFavorites} />
-          </a>
-        </div>
-      )}
-    </div>
+    <>
+    {item.businessId ? 
+    <div className='feed-item product'>
+      <div className='feed-item__section-a'>
+        <span className='name'>
+          <Link to={`/businesses/${item.businessId}/products/${item.id}`}>
+            {item.name}
+          </Link>
+        </span>
+        <span className='from'>
+          by{' '}
+          <Link to={`/businesses/${item.businessId}`}>
+            {item.business.name}
+          </Link>
+        </span>
+      </div>
+      <div className='feed-item__section-b'>
+        <Stars qty={item.ratingCeiling} />
+      </div>
+      <div className='feed-item__section-c'>
+        <span className='description'>
+          {item.description}
+        </span>
+            {sessionUser ? 
+              <FaHeart
+                onClick={toggleFavorites}
+                className={isInFavorites ? 'in-favorites' : 'not-in-favorites'} /> : ''}
+      </div>
+    </div> : ''
+    }
+    </>
   );
 };
 
