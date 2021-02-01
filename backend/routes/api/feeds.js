@@ -77,7 +77,7 @@ router.get(
       offset,
       limit,
       order: order,
-      include: { model: Tag, as: 'tags' },
+      include: [{ model: Tag, as: 'tags' }, { model: Business, as: 'business' }],
     });
 
     const flagInDefaultCollection = ({
@@ -129,13 +129,13 @@ router.get(
     }
 
     const out = {
-      offset: Number(offset) || 0,
-      limit: Number(limit) || 20,
-      sortedBy: sortedBy || 'NAME_A_Z',
-      includeProducts: Boolean(includeProducts) || true,
-      includeBusinesses: Boolean(includeBusinesses) || false,
-      includeFavorites: Boolean(includeFavorites) || false,
-      includeCheckIns: Boolean(includeCheckIns) || false,
+      offset: Number(offset),
+      limit: Number(limit),
+      sortedBy: sortedBy,
+      includeProducts: Boolean(includeProducts),
+      includeBusinesses: Boolean(includeBusinesses),
+      includeFavorites: Boolean(includeFavorites),
+      includeCheckIns: Boolean(includeCheckIns),
       feedItems: []
     };
 
