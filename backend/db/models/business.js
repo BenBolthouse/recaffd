@@ -59,7 +59,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   Business.associate = function (models) {
     Business.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-    Business.hasOne(models.BusinessCategories, { foreignKey: 'name', as: 'category' });
+    Business.belongsTo(models.BusinessCategory, { foreignKey: 'categoryId', as: 'category' });
+    Business.hasMany(models.Product, { foreignKey: 'id', as: 'products' });
     Business.belongsToMany(models.Review, {
       through: 'BusinessReviews',
       otherKey: 'reviewId',

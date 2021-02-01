@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     'Review',
     {
       userId: DataTypes.UUID,
-      associationId: DataTypes.UUID,
       rating: {
         type: DataTypes.NUMBER,
         validate: {
