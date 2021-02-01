@@ -83,6 +83,8 @@ function reducer(state = initialState, { type, payload }) {
       newState.home.limit = payload.limit;
       newState.home.offset = payload.offset;
       newState.home.sortedBy = payload.sortedBy;
+      newState.home.includeBusinesses = payload.includeBusinesses;
+      newState.home.includeProducts = payload.includeProducts;
       newState.home.items = [...newState.home.items, ...payload.feedItems];
       return newState;
     case RESET_HOME_FEED:
@@ -91,6 +93,8 @@ function reducer(state = initialState, { type, payload }) {
       newState.home.limit = payload.limit;
       newState.home.offset = payload.offset;
       newState.home.sortedBy = payload.sortedBy;
+      newState.home.includeBusinesses = payload.includeBusinesses;
+      newState.home.includeProducts = payload.includeProducts;
       newState.home.items = [...payload.feedItems];
       return newState;
     default:
