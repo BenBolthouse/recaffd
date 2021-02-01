@@ -115,5 +115,5 @@ dist
 # React gitignore
 
 # Production
-frontend/build
 .DS_Store
+/build

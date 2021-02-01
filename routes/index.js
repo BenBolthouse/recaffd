@@ -22,15 +22,15 @@ if (production) {
   // serve react as default / route
   router.get('/', (req, res) => {
     res.cookie('xsrfToken', req.csrfToken());
-    return res.sendFile(path.resolve(__dirname, '../../frontend', 'build', 'index.html'));
+    return res.sendFile(path.resolve(__dirname, '../build/index.html'));
   });
 
-  router.use(express.static(path.resolve(__dirname, '../../frontend', 'build')));
+  router.use(express.static(path.resolve(__dirname, '../build')));
 
   // serve react index as default /api route
   router.get(/^(?!\/?api).*/, (req, res) => {
     res.cookie('xsrfToken', req.csrfToken());
-    return res.sendFile(path.resolve(__dirname, '../../frontend', 'build', 'index.html'));
+    return res.sendFile(path.resolve(__dirname, '../build/index.html'));
   });
 }
 
