@@ -4,8 +4,9 @@
   "private": true,
   "main": "backend/bin/www",
   "scripts": {
-    "prestart": "npm i --folder backend && npm i --folder frontend && npm --prefix frontend run build",
-    "start": "npm --prefix backend start"
+    "prestart": "npm i --folder backend",
+    "start": "npm --prefix backend start",
+    "postinstall": "npm i --folder frontend && npm --prefix frontend run build"
   },
   "dependencies": {
     "recaffd-backend": "file:backend",
