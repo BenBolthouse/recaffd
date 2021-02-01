@@ -9,5 +9,11 @@
         <g transform="matrix(2.8125,0,0,2.8125,0,0)">
             <path d="M39,32L39,34C39,39.519 34.519,44 29,44L14,44C8.481,44 4,39.519 4,34L4,5C4,4.448 4.448,4 5,4L38,4C38.552,4 39,4.448 39,5L39,9L42,9C44.208,9 46,10.792 46,13L46,28C46,30.208 44.208,32 42,32L39,32ZM39,12L39,29L40,29C41.104,29 42,28.104 42,27L42,14C42,12.896 41.104,12 40,12L39,12Z" style="fill:white;"/>
         </g>
+        <g transform="matrix(2.8125,0,0,2.8125,0,0)">
+            <path d="M8,4.625C8,4.625 8.266,2 10,2C11.734,2 9.551,15.134 20,18.406C28.285,21.001 35,16.438 35,16.438L35,36L34.993,36C34.863,38.23 33.012,40 30.75,40L12.25,40C9.988,40 8.137,38.23 8.007,36L8,36L8,4.625Z" style="fill:url(#_Linear1);"/>
+        </g>
     </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(12.5,20.5,-28.8519,17.5926,12.5,17)"><stop offset="0" style="stop-color:rgb(124,30,51);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(88,44,13);stop-opacity:1"/></linearGradient>
+    </defs>
 </svg>
