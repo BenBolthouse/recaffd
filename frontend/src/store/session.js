@@ -37,13 +37,14 @@ export const restoreUser = () => async dispatch => {
  * Create a new user from personal information.
  */
 export const signup = user => async dispatch => {
-  const { username, emailAddress, password } = user;
+  const { username, emailAddress, password, confirmPassword } = user;
   const response = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({
       username,
       emailAddress,
       password,
+      confirmPassword,
     }),
   });
   dispatch(setUser(response.data.user));
