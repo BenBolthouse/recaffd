@@ -2,7 +2,7 @@ const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcrypt');
 
-const { User, Hash, Role } = require('../../db/models');
+const { Collection, Hash, Role, User } = require('../../db/models');
 const { validateUserSignUp } = require('../utils/validators');
 
 /**
@@ -23,14 +23,17 @@ router.post(
         {
           ...req.body,
           hashes: [{ type: 'PASSWORD', hash }],
+          collections: [{ name: 'favorites' }, { name: 'checkins' }],
         },
         {
-          include: [{ model: Hash, as: 'hashes' }],
+          include: [
+            { model: Hash, as: 'hashes' },
+            { model: Collection, as: 'collections' },
+          ],
         }
       );
       await user.addRole(userRole);
-    } 
-    catch (e) {
+    } catch (e) {
       return res.out.badRequest400(
         e.name,
         'User could not be created.',
