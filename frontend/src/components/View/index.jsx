@@ -15,7 +15,7 @@ export const ViewWithNav = ({ children, isLoaded }) => {
       <Navbar isLoaded={isLoaded} />
       <AppMessages />
       <div id="page" className="page-wrapper with-navbar">
-        <div className="page">
+        <div className="page page-width">
           {children}
         </div>
       </div>
@@ -23,7 +23,7 @@ export const ViewWithNav = ({ children, isLoaded }) => {
   )
 }
 
-export const View = ({ children, isLoaded }) => {
+export const AuthView = ({ children, isLoaded }) => {
   return (
     <>
       <AppMessages />
