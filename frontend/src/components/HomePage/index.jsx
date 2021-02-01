@@ -8,7 +8,6 @@ import { fetch } from '../../store/csrf';
 import VisibilitySensor from 'react-visibility-sensor';
 import Stars from '../Stars';
 import { FaHeart } from 'react-icons/fa';
-import { FaDoorOpen } from 'react-icons/fa';
 
 // State actions
 import * as feedsActions from '../../store/feeds';
@@ -117,6 +116,11 @@ const FeedItem = ({ item }) => {
       </div>
       <div className='feed-item__section-b'>
         <Stars qty={item.ratingCeiling} />
+        <div className='tags'>
+          {item.tags.length
+            ? item.tags.map(tag => (<div className='tag' key={`home-page-tag-${item.id}-${tag}`}>{tag}</div>))
+            : ''}
+        </div>
       </div>
       <div className='feed-item__section-c'>
         <span className='description'>

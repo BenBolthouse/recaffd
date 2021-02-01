@@ -43,11 +43,28 @@
           }
         }
         .feed-item__section-b {
-          .stars {
+          grid-template-columns: 6.75rem auto;
+          > .stars {
             align-content: center;
             color: color.$warning;
             grid-template-columns: repeat(5, 1.25rem);
             height: 1.25rem;
+          }
+          > .tags {
+            display: block;
+            overflow: hidden;
+            height: 1.5rem;
+            > .tag {
+              background-color: color.$black-60;
+              border-radius: .75rem;
+              color: white;
+              float: left;
+              padding: 0 .75rem;
+              margin-right: .25rem;
+              font-size: (14rem / 16);
+              line-height: 1.5rem;
+              height: 1.5rem;
+            }
           }
         }
         .feed-item__section-c {
