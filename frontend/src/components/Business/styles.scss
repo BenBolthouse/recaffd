@@ -1,0 +1,90 @@
+@use '../../styles/colors' as color;
+
+.business-view {
+  background-color: white;
+  border-radius: .25rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  grid-column: 3 / 11;
+  margin-top: 3rem;
+  > .business-view__awaiting {
+    grid-template-columns: span 12;
+    justify-items: center;
+    padding-top: 4rem;
+  }
+  > .business-view__loaded {
+    grid-template: 8rem auto / repeat(12, 1fr);
+    > .business-view__section-a {
+      border-bottom: 1px solid color.$black-80;
+      grid-column: span 12;
+      grid-template: 5rem 3rem / 100%;
+      h1 {
+        font-size: 2rem;
+        height: 5rem;
+        line-height: 2rem;
+        padding: 2rem 0 1rem;
+        text-align: center;
+      }
+      .category {
+        color: color.$black-40;
+        font-size: (20rem / 16);
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+      }
+    }
+    > .business-view__section-b {
+      grid-column: span 6;
+      grid-template-rows: 4rem 2rem 1.5rem auto;
+      padding: 2rem 1rem 1rem 3rem;
+      > h3 {
+        font-size: (24rem / 16);
+        font-weight: 300;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      > .tags {
+        display: block;
+        overflow: hidden;
+        > div {
+          background-color: color.$black-90;
+          border-radius: .75rem;
+          float: left;
+          line-height: 1.5rem;
+          margin-right: .25rem;
+          padding: 0 .75rem;
+        }
+      }
+      > p {
+        font-size: (18rem / 16);
+        letter-spacing: .025rem;
+        line-height: 1.75rem;
+        padding: 1rem 0 1rem;
+      }
+    }
+    > .business-view__section-c {
+      grid-column: span 6;
+      grid-template-rows: 4rem 2rem 1.5rem auto;
+      padding: 2rem 1rem 1rem 3rem;
+      > h3 {
+        font-size: (24rem / 16);
+        font-weight: 300;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      > .tags {
+        display: block;
+        > div {
+          background-color: color.$black-90;
+          border-radius: .75rem;
+          float: left;
+          line-height: 1.5rem;
+          margin-right: .25rem;
+          overflow: hidden;
+          padding: 0 .75rem;
+        }
+      }
+    }
+  }
+}
