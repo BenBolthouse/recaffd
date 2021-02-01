@@ -9,12 +9,13 @@ import * as sessionActions from '../store/session';
 import './styles.css';
 
 // Views components
-import { HomeView, View, ViewWithNav } from '../components/View';
+import { HomeView, AuthView, ViewWithNav } from '../components/View';
 
 // Other components
 import Register from '../components/Register';
 import Login from '../components/Login';
 import HomePage from '../components/HomePage';
+import Business from '../components/Business';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,19 +33,19 @@ const App = () => {
       <Switch>
         <Switch path='/auth'>
           <Route path='/auth/login'>
-            <View isLoaded={isLoaded}>
+            <AuthView isLoaded={isLoaded}>
               <Login />
-            </View>
+            </AuthView>
           </Route>
           <Route path='/auth/register'>
-            <View isLoaded={isLoaded}>
+            <AuthView isLoaded={isLoaded}>
               <Register />
-            </View>
+            </AuthView>
           </Route>
           <Route path='/*'>
-            <View isLoaded={isLoaded}>
+            <AuthView isLoaded={isLoaded}>
               404
-            </View>
+            </AuthView>
           </Route>
         </Switch>
         <Switch path='/'>
@@ -65,7 +66,7 @@ const App = () => {
           </Route>
           <Route path='/businesses/:id'>
             <ViewWithNav isLoaded={isLoaded}>
-              Businesses
+              <Business />
             </ViewWithNav>
           </Route>
         </Switch>
