@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 // State actions
@@ -14,41 +14,45 @@ const Login = () => {
   // Hooks
   const dispatch = useDispatch();
   const history = useHistory();
+  const sessionUser = useSelector(s => s.session.user);
 
   // Component state
   const [emailAddress, setEmailAddress] = useState('Email');
   const [password, setPassword] = useState('');
 
-  // Handles login and app messages
+  // Redirect user to the home screen if there is a session
+  useEffect(() => {
+    if (sessionUser) history.push('/');
+  }, [sessionUser, history]);
+
+  // Event handlers
   const onSubmit = async e => {
     e.preventDefault();
     if (!emailAddress || !password) {
-      dispatch(queuesActions.pushAppMessage({
-        message: 'Please provide your email and password to login.',
+      return dispatch(queuesActions.pushAppMessage({
+        message: 'Please provide fill out the fields below to create an account.',
         type: 'warning',
       }));
     }
-    if (emailAddress && password) {
-      try {
-        const { data } = await dispatch(
-          sessionActions.login({
-            emailAddress,
-            password,
-          })
-        );
-        history.push('/');
-        const { username, firstName } = data.data;
-        dispatch(queuesActions.pushAppMessage({
-          message: `Welcome back, ${firstName ? firstName : username}!`,
-          type: 'success',
-        }));
-      }
-      catch (e) {
-        dispatch(queuesActions.pushAppMessage({
-          message: 'Could not login. Please try again.',
-          type: 'danger',
-        }));
-      }
+    try {
+      const { data } = await dispatch(
+        sessionActions.login({
+          emailAddress,
+          password,
+        })
+      );
+      history.push('/');
+      const { username, firstName } = data.data;
+      return await dispatch(queuesActions.pushAppMessage({
+        message: `Welcome back, ${firstName ? firstName : username}!`,
+        type: 'success',
+      }));
+    }
+    catch (e) {
+      return await dispatch(queuesActions.pushAppMessage({
+        message: 'Could not login. Please try again.',
+        type: 'danger',
+      }));
     }
   };
 
