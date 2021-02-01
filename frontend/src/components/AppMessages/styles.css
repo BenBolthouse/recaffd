@@ -39,15 +39,15 @@
   color: white;
 }
 .app-messages__message.success {
-  background-color: #00ff80;
+  background-color: #06bb61;
   color: white;
 }
 .app-messages__message.warning {
-  background-color: #ffb700;
+  background-color: #f7990b;
   color: white;
 }
 .app-messages__message.danger {
-  background-color: #ff0044;
+  background-color: #ff0062;
   color: white;
 }
 
