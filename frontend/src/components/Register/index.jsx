@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 // State actions
 import * as sessionActions from '../../store/session';
+import * as queuesActions from '../../store/queues';
 
 // Scoped styles
 import './styles.css';
@@ -14,7 +15,7 @@ const Register = () => {
   const history = useHistory();
   const sessionUser = useSelector(s => s.session.user);
 
-  // State
+  // Component state
   const [username, setUsername] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
@@ -26,16 +27,37 @@ const Register = () => {
   }, [sessionUser, history]);
 
   // Event handlers
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
-    dispatch(
-      sessionActions.signup({
-        username,
-        emailAddress,
-        password,
-        confirmPassword,
-      })
-    );
+    if (!username || !emailAddress || !password || !confirmPassword) {
+      return dispatch(
+        queuesActions.pushAppMessage({
+          message: 'Please provide your email and password to login.',
+          type: 'warning',
+        })
+      );
+    }
+    try {
+      await dispatch(
+        sessionActions.signup({
+          username,
+          emailAddress,
+          password,
+          confirmPassword,
+        })
+      );
+      history.push('/auth/login');
+      return dispatch(queuesActions.pushAppMessage({
+        message: `Account created. Please login.`,
+        type: 'success',
+      }));
+    }
+    catch (e) {
+      return await dispatch(queuesActions.pushAppMessage({
+        message: 'Could not create your account. Please try again.',
+        type: 'danger',
+      }));
+    }
   };
 
   return (
