@@ -4,9 +4,8 @@
   "private": true,
   "main": "backend/bin/www",
   "scripts": {
-    "prestart": "npm i",
     "start": "npm i --folder backend && npm --prefix backend start",
-    "postinstall": "npm i --folder frontend && npm --prefix frontend run build"
+    "postinstall": "npm i && npm i --folder frontend && npm --prefix frontend run build"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
