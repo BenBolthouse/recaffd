@@ -6,10 +6,14 @@
   "scripts": {
     "prestart": "npm i --folder backend",
     "start": "npm --prefix backend start",
-    "postinstall": "npm i --folder frontend && npm --prefix frontend run build"
+    "postinstall": "npm i && npm i --folder frontend && npm --prefix frontend run build"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.5.1",
     "recaffd-backend": "file:backend",
-    "recaffd-frontend": "file:frontend"
+    "recaffd-frontend": "file:frontend",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   }
 }
