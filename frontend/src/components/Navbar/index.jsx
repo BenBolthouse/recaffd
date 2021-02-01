@@ -58,7 +58,7 @@ const Navbar = ({ isLoaded }) => {
                   className='navbar__session'
                   onClick={toggleUserMenu}>
                   <img
-                    src={`/images/user-${sessionUser.id}_default_48.jpg`}
+                    src={`/images/user-501_default_48.jpg`}
                     alt="Profile" />
                   <span
                     className="navbar__username">
