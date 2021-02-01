@@ -1,4 +1,4 @@
-const config = require('./index');
+require('dotenv').config();
 
 const db = config.db;
 const username = db.username;
@@ -8,14 +8,6 @@ const host = db.host;
 
 module.exports = {
   development: {
-    username,
-    password,
-    database,
-    host,
-    dialect: 'postgres',
-    seederStorage: 'sequelize',
-  },
-  test: {
     username,
     password,
     database,
